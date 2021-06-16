@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "673786540030",
+    "project_id": "science-virtual-lab",
+    "storage_bucket": "science-virtual-lab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673786540030:android:715e27f547e73354069aaf",
+        "android_client_info": {
+          "package_name": "com.visang.VirtualLab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673786540030-fvm8223kneer2bp535qu72io5bs4aq5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.visang.VirtualLab",
+            "certificate_hash": "c0fa07c6002cfd14148e54e6e942c0c69fc7d6a5"
+          }
+        },
+        {
+          "client_id": "673786540030-s949657m0umnq7c1fe7os92hitql11gb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZxo49-7X-q80j0WRyxViRYprSz5HrASs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673786540030-s949657m0umnq7c1fe7os92hitql11gb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "673786540030-7ij5vgo1puee4bpl6tai82ohq9jtumip.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.visang.VirtualLab"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
