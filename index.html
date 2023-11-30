@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>웹(Web) 실감형 콘텐츠 | m210002138</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="TemplateData/css.css">
+</head>
+<body>
+    <div id="unity-container" class="unity-desktop">
+        <div class="webgl-content">
+            <div id="gameContainer" style="width: 80%; padding: 0px; margin: auto; border: 0px; position: relative; background: url(&quot;TemplateData/BG_All.svg&quot;) center center / cover;">
+                <canvas id="unity-canvas" style="width: 100%; height:100%;">
+                </canvas>
+                <div class="circle_progress_wrap" hidden style="display:block;">
+                    <img class="frame" src="TemplateData/BG_Loader.svg" />
+                    <svg class="circle_progress" width="210" height="210" viewBox="0 0 210 210">
+                        <circle class="bar" cx="214" cy="210" r="96" stroke-width="13"></circle>
+                    </svg>
+                    <strong class="value"></strong>
+                </div>
+            </div>
+            <div class="footer" id="footer" style="width: 80%; margin: auto; ">
+                <div class="title" style="font-family: NanumSquareRoundOTFL; font-size: 10px;">
+                    *크롬 최신버전과 안드로이드 기기에 최적화 되어 있습니다.
+                    <a href="https://www.google.co.kr/chrome/?brand=JJTC&amp;gclid=EAIaIQobChMIv9mXhuK49QIVh0NgCh1AVwWoEAAYASAAEgJ16PD_BwE&amp;gclsrc=aw.ds;" style="color: black;">(Chrome 다운로드)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="control" type="range" value="0" hidden />
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/test.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/test.data.unityweb",
+        frameworkUrl: buildUrl + "/test.framework.js.unityweb",
+        codeUrl: buildUrl + "/test.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "",
+        productName: "",
+        productVersion: "0.0.1",
+        };
+      var control = document.getElementById('control');
+      var bar = document.querySelector('.bar');
+        var value = document.querySelector('.value');
+     
+      var RADIUS = 96;
+      var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+        function progressFun(per) {
+          var dashoffset = CIRCUMFERENCE * (1 - per);
+
+            value.innerHTML = parseInt(100 * per) + '%';
+          bar.style.strokeDashoffset = dashoffset;
+        }
+        bar.style.strokeDasharray = CIRCUMFERENCE;
+      var container = document.querySelector("#containerDiv");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector(".circle_progress_wrap");
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+              progressFun(progress);
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+        document.body.appendChild(script);
+
+    </script>
+</body>
+</html>
