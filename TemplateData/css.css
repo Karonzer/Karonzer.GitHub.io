@@ -1,0 +1,35 @@
+.circle_progress_wrap {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+.circle_progress {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+.frame, .bar {
+    fill: none;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+.bar {
+    stroke: #FF540B;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292;
+}
+.value {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    line-height: 120px;
+}
