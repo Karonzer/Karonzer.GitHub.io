@@ -1,0 +1,659 @@
+<krpano Num="0" addNum="1" videoON ="" >
+
+	<!--  -->
+	<action name="goto_commonmap">
+		set(startscene, "commonmap");
+		stopBGM();
+		loadscene(get(startscene), null, MERGE);
+		vrmode_btn_description();
+		no_menu();
+	</action>
+
+	<action name="goto_commonmap_2">
+		set(startscene, "commonmap");
+		loadscene(get(startscene), null, MERGE);
+		vrmode_btn_description();
+		no_menu();
+	</action>
+
+  <action name="BGM">
+	  if(Num == 1,
+	  set(currentscene, %1);
+	  set(bgmpath, calc: currentscene + "/audio/" + currentscene + "_bgm.mp3|" + currentscene + "bgm.ogg");
+	  playBGM();
+	  );
+  </action>
+
+  <action name="Count">
+	  set(Num, calc(Num + addNum));
+  </action>
+
+	<action name="Start_BGM">
+		set(currentscene, %1);
+		set(bgmpath, calc: currentscene + "/audio/" + currentscene + "_bgm.mp3|" + currentscene + "bgm.ogg");
+		preloadsound(get(bgmpath););
+		playsound(bgm, get(bgmpath),1);
+		set(tour_soundson, true);
+		trace("Start_Bgm");
+	</action>
+  
+	<!-- 지역 지도에서 유적지로 진입 / 인자: 유적지 첫 번째 로드 지점 네임 -->
+	<action name="start_tour">
+		set(currentscene, %1);
+		set(bgmpath, calc: currentscene + "/audio/" + currentscene + "_bgm.mp3|" + currentscene + "bgm.ogg");
+		set(startscene, calc: "%1" + "_" + "%2");
+		set(minimap, calc: currentscene + "_minimap");
+		set(layer[activespot].parent, get(minimap));
+		loadscene(get(startscene), null, MERGE, OPENBLEND(0.3, 0.0, 0.6, 0.3, easeOutQuad));
+		autorotate.resume();
+		<!-- 0601수정_VR 시작 시 미니맵, 사이드 메뉴, 하단 컨트롤 바 표시(기존에는 잘못된 위치인 goto_video 함수 내에 포함되어있었음.  -->
+		set(layer[sidemenu].visible, true);
+		delayedcall(1, tween(layer[sidemenu].alpha, 1.0, 1););
+		<!-- 아래 주석을 삭제 X 다른 버전에서 사용 할 수 있음-->
+		<!--set(layer[get(minimap)].visible, true);
+		delayedcall(1.1, tween(layer[get(minimap)].alpha, 1.0, 1);); -->
+		
+		set(layer[CirclesControlBar_menu_bg].visible, true);
+		tween(layer[CirclesControlBar_menu_bg].alpha, 1.0, 1);
+		vrmode_btn_description();
+	</action>
+
+	<!-- 시작 지점 변수(startscene)에 따라 UI 표시 여부 / 인자: 지역 지도로 이동할 경우에만 commonmap 입력  -->
+	<!-- 0601수정_레이더 레이어는 미니맵에 종속되어 별도 처리 필요하지 않아 삭제함. 기존 미니맵 상태에 따라 비디오 노드나 VR 모드에서 나올 때 미니맵을 노출/비노출 처리함.   -->
+	<action name="no_menu">
+		if(startscene == scene[0].name OR startscene == 0 OR startscene == "commonmap",
+		autorotate.pause();
+		set(layer[activespot].visible	, false);
+		set(layer[activeairspot].visible	, false);
+		set(layer[sidemenu].visible, false);
+		set(layer[get(minimap)].visible, false);
+		set(layer[sidemenu].alpha, 0.0);
+		set(layer[get(minimap)].alpha, 0.0);
+		tween(layer[CirclesControlBar_menu_bg].alpha, 0.0, 0.5, default, set(layer[CirclesControlBar_menu_bg].visible, false););,
+		if(minimap_status,
+		set(layer[get(minimap)].visible, true);
+		delayedcall(1.1, tween(layer[get(minimap)].alpha, 1.0, 1););
+		);
+		delayedcall(1, tween(layer[sidemenu].alpha, 1.0, 1););
+		set(layer[CirclesControlBar_menu_bg].visible, true);
+		tween(layer[CirclesControlBar_menu_bg].alpha, 1.0, 1);
+		);
+	</action>
+
+	<action name="no_menu_hy_hsd">
+		autorotate.pause();
+		set(layer[activespot].visible	, false);
+		set(layer[activeairspot].visible	, false);
+		set(layer[sidemenu].visible, false);
+		set(layer[get(minimap)].visible, false);
+		set(layer[sidemenu].alpha, 0.0);
+		set(layer[get(minimap)].alpha, 0.0);
+		tween(layer[CirclesControlBar_menu_bg].alpha, 0.0, 0.5, default, set(layer[CirclesControlBar_menu_bg].visible, false););
+		if(tour_soundson,	pausesound(bgm););
+	</action>
+	<action name="open_menu_hy_hsd">
+		set(layer[sidemenu].visible, true);
+		set(layer[get(minimap)].visible, true);
+		delayedcall(1, tween(layer[sidemenu].alpha, 1.0, 1););
+		delayedcall(1.1, tween(layer[get(minimap)].alpha, 1.0, 1););
+		set(layer[CirclesControlBar_menu_bg].visible, true);
+		tween(layer[CirclesControlBar_menu_bg].alpha, 1.0, 1);
+		vrmode_btn_description();
+		if(tour_soundson,	resumesound(bgm););
+	</action>
+	
+
+	<!-- 팝업 레이어  호출 함수 / 인자: 팝업 파일명(확장자 제외) / 부모 레이어의 url을 교체한 후 호출하는 방식(resize 이슈), 자동 회전 일시 정지 -->
+	<action name="layer_on">
+	set(layer[layer_parent].url, calc: "source/" + currentscene + "/popup/" + currentscene +"_%1" + ".png");
+	Playeffect("bubble");
+	layer_size();
+	delayedcall(0.1, set(layer[layer_parent].visible,true));
+	delayedcall(0.1, tween(layer[layer_parent].alpha,  1.0, 0.3));
+	delayedcall(0.1, set(layer[layer_bg].visible,true));
+	delayedcall(0.1, tween(layer[layer_bg].alpha,  1.0, 0.3));
+	autorotate.pause();
+	</action>
+
+	<!-- 팝업 창 크기 변경 시 레이어 사이즈 자동 조정,  -->
+	<action name="layer_size">
+	<!-- resize original .png file -->
+		set(layer[layer_parent].width, 1000);
+		set(layer[layer_parent].height, 909);
+		calc(popupratio, layer[layer_parent].width/layer[layer_parent].height);
+		if( stagewidth/stageheight GE popupratio,
+		calc(layer[layer_parent].height, stageheight);
+		calc(layer[layer_parent].width, layer[layer_parent].height * popupratio);
+		, calc(layer[layer_parent].width, stagewidth);
+		calc(layer[layer_parent].height, layer[layer_parent].width / popupratio);
+		);
+	</action>
+
+	<!-- 팝업 레이어 제거 함수 / 인자 없음. / 부모 레이어와 배경 레이어 제거  -->
+	<action name="layer_off">
+	set(layer[layer_parent].alpha,  0.0);
+	set(layer[layer_parent].visible,false);
+	set(layer[layer_bg].visible,false);
+	set(layer[layer_bg].alpha,  0.0);
+	autorotate.resume();
+	</action>
+	
+		<action name="open_help">
+		Playeffect("bubble");
+		help_size();
+		delayedcall(0.1, set(layer[help_bg].visible,true));
+		delayedcall(0.1, tween(layer[help_bg].alpha,  1.0, 0.3));
+		delayedcall(0.1, set(layer[help].visible,true));
+		delayedcall(0.1, tween(layer[help].alpha,  1.0, 0.3));
+		autorotate.pause();
+	</action>
+
+	<!-- recalculate common map -->
+	<action name="help_size">
+		calc(imgratio, layer[help].width/layer[help].height);
+		if( stagewidth/stageheight GE imgratio,
+			calc(layer[help].height, stageheight);
+			calc(layer[help].width, layer[help].height * imgratio);
+
+			, calc(layer[help].width, stagewidth);
+			calc(layer[help].height, layer[help].width / imgratio);
+
+		);
+	</action>
+
+	<!-- close common map popup -->
+	<action name="close_help">
+		set(layer[help_bg].visible,false);
+		set(layer[help_bg].alpha,  0.0);
+	set(layer[help].alpha,  0.0);
+	set(layer[help].visible,false);
+	autorotate.resume();
+	</action>
+
+  <!-- open common map -->
+	<action name="open_commonmap">
+		Playeffect("bubble");
+		commonmap_size();
+		delayedcall(0.1, set(layer[commonmap_bg].visible,true));
+		delayedcall(0.1, tween(layer[commonmap_bg].alpha,  1.0, 0.3));
+		delayedcall(0.1, set(layer[commonmap].visible,true));
+		delayedcall(0.1, tween(layer[commonmap].alpha,  1.0, 0.3));
+		autorotate.pause();
+	</action>
+
+	<!-- recalculate common map -->
+	<action name="commonmap_size">
+		calc(imgratio, layer[commonmap].width/layer[commonmap].height);
+		if( stagewidth/stageheight GE imgratio,
+			calc(layer[commonmap].height, stageheight);
+			calc(layer[commonmap].width, layer[commonmap].height * imgratio);
+
+			, calc(layer[commonmap].width, stagewidth);
+			calc(layer[commonmap].height, layer[commonmap].width / imgratio);
+
+		);
+	</action>
+
+	<!-- move tour spot point -->
+	<action name="goto_by_commonmap">
+		close_commonmap();
+		close_minimap();
+		start_tour(%1);
+		stop_voice();
+	</action>
+
+	<!-- close common map popup -->
+	<action name="close_commonmap">
+		set(layer[commonmap_bg].visible,false);
+		set(layer[commonmap_bg].alpha,  0.0);
+	set(layer[commonmap].alpha,  0.0);
+	set(layer[commonmap].visible,false);
+	autorotate.resume();
+	</action>
+
+
+
+
+	<!-- 지점 핫스팟 클릭으로 노드 이동 /  인자: 노드 네임 / 오픈 블렌드 효과, 걷는 소리 출력(지역 지도로 이동 시에는 미출력) -->
+	<action name="goto">
+		ifnot(%1 == commonmap,
+		Playeffect("walking");
+		);
+		loadscene(%1, null, MERGE, OPENBLEND(1.8, 0.0, 0.3, 0.7, easeOutQuad));
+		vrmode_btn_description();
+		stop_voice();
+	</action>
+
+	<action name="goto_airOrvideo">
+		loadscene(%1, null, MERGE, OPENBLEND(1.8, 0.0, 0.3, 0.7, easeOutQuad));
+		vrmode_btn_description();
+	</action>
+
+	<!-- 핫스팟 마우스 오버 시 아이콘 변경 / 인자: 기본 핫스팟 네임, 오버 핫스팟 네임 -->
+	<action name="btn_hover">
+		set(hotspot[%1].visible, false);
+		set(hotspot[%2].visible, true);
+	</action>
+
+	<!-- 핫스팟 마우스 아웃 시 아이콘 변경 / 인자: 기본 핫스팟 네임, 오버 핫스팟 네임 -->
+	<action name="btn_out">
+		set(hotspot[%2].visible, false);
+		set(hotspot[%1].visible, true);
+	</action>
+
+	<action name="narration_btn_hover">
+		set(hotspot[%1].scale, %2);
+	</action>
+	
+	<action name="narration_btn_out">
+		set(hotspot[%1].scale, %2);
+	</action>
+
+
+	<!-- 비디오 노드 이동 / 인자: 노드 네임, in or out / in, out에 따라 줌 블렌드 효과, 자동 회전, 배경 음악, 진입음, 미니맵, 사이드메뉴, 컨트롤바, 동영상 재생바 등 설정 -->
+	<action name="goto_video">
+		if(%2 == in,
+			autorotate.pause();
+			if(tour_soundson,
+				pausesound(bgm);
+			);
+			Playeffect("whoosh");
+			<!-- 0601수정_ 미니맵 상태 지정 변수는 vs_history_vr.xml에서 정의함. 비디오 노드 이동 시 미니맵이 노출된 상태인 경우에만 숨김 처리함.-->
+			if(minimap_status, 
+				tween(layer[get(minimap)].alpha, 0.0, 0.5, default, set(layer[get(minimap)].visible, false););
+			);
+			tween(layer[sidemenu].alpha, 0.0, 0.5, default, set(layer[sidemenu].visible, false););
+			tween(layer[CirclesControlBar_menu_bg].alpha, 0.0, 0.5, default, set(layer[CirclesControlBar_menu_bg].visible, false););
+			set(CirclesControlBarNo, false);
+			ifnot(vrmode_on,
+				delayedcall(2.0, set(layer[skin_layer].visible, true));
+			);
+			, %2 == out,
+				set(layer[skin_layer].visible, false);
+				delayedcall(1,
+					autorotate.resume();
+					if(tour_soundson,
+						resumesound(bgm);
+					);
+					ifnot(vrmode_on,
+						set(CirclesControlBarNo, true);
+			<!-- 0601수정_ VR 모드가 아니면 각종 메뉴 다시 나타남. 미니맵은 기존 상태에 따라 노출/비노출 처리함. -->
+						set(layer[sidemenu].visible, true);
+						set(layer[CirclesControlBar_menu_bg].visible, true);
+						if(minimap_status,
+							set(layer[get(minimap)].visible, get(minimap_status));
+							tween(layer[get(minimap)].alpha, 1.0, 1);
+						);
+						tween(layer[CirclesControlBar_menu_bg].alpha, 1.0, 1);
+						tween(layer[sidemenu].alpha, 1.0, 1);
+					);
+					set(skin_video_setup_done, false);
+				);
+		);
+
+		loadscene(%1, null, KEEPVIEW, ZOOMBLEND(1.5, 2.0, easeOutQuad));
+		vrmode_btn_description();
+	</action>
+
+<!-- 비디오 소스 추가-->
+	<action name="add_video_sources">
+		set(videoPath, calc: "%FIRSTXML%/source/" + currentscene + "/video/" + "%1.mp4|%FIRSTXML%/source/" + currentscene + "/video/" + "%1.webm");
+		set(thumbPath, calc: "%FIRSTXML%/source/" + currentscene + "/video/" + "%1.jpg");
+		videointerface_addsource(%1, get(videoPath), get(thumbPath));
+		videointerface_play(%1);
+		set(retimespot, calc: "%1re");
+		delayedcall(5.0, set(hotspot[get(retimespot)].visible, true));
+		ifnot(vrmode_on,
+		delayedcall(2.0, set(layer[skin_layer].visible, true));
+		);
+	</action>
+
+	<!-- disappear hotspots form view -->
+			<!-- 0601수정_ 보충 영상, 답사 영상 스타일 추가로, VR 모드 진입 시 핫스팟 노출/비노출 함수에 해당 영상 아이콘 스타일 추가함. -->
+		<action name="vrmode_btn_description">
+
+			if(vrmode_on,
+			for(set(i,0), i LT hotspot.count, inc(i),
+			if(hotspot[get(i)].style == btn_description,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_description_ty,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_13,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_16,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_droneplay,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_exploremovie_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_addmovie_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_droneplay_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_13_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_16_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_description_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_description_ty_vr,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_common_map,
+			set(hotspot[get(i)].visible, true);
+			set(layer[get(minimap)].visible, false);
+			);
+
+			if(hotspot[get(i)].style == commonmap_spot_vr,
+			if(startscene == "commonmap",
+			set(hotspot[get(i)].visible, true);,
+			);
+			);
+			);
+
+			,for(set(i,0), i LT hotspot.count, inc(i),
+			if(hotspot[get(i)].style == btn_description,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_description_ty,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_13,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_16,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_droneplay,
+			set(hotspot[get(i)].visible, true);
+			);
+			if(hotspot[get(i)].style == btn_exploremovie_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_addmovie_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_droneplay_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_13_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_videoplay_16_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_description_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_description_ty_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == btn_common_map,
+			set(hotspot[get(i)].visible, false);
+			);
+			if(hotspot[get(i)].style == commonmap_spot_vr,
+			set(hotspot[get(i)].visible, false);
+			);
+			);
+			<!-- 0601수정_ 기존 no_menu 함수와 동일한 내용이라 삭제함. 비디오 플레이어 VR 제거도 팝업과 동일하게 별도 함수로 지정함(기존은 VR 모드 해제 시 정지하지 않음/videoplayer_vr_off()). -->
+			if(hotspot[videoplayer].visible == true,
+			set(hotspot[videoplayer].alpha,  0.0);
+			set(hotspot[videoplayer].visible,false););
+			);
+
+			if(vrmode_on,
+			set(layer[get(minimap)].visible, false);
+			,
+			set(layer[get(minimap)].visible, true);
+			);
+
+			if(currentscene == "ty_hsd_12_1",
+			stopBGM();
+			);
+
+			popup_vr_off();
+			videoplayer_vr_off();
+			videoplayer_close_vr();
+		</action>
+
+<!-- Sound -->
+	<action name="playBGM">
+		playsound(bgm, get(bgmpath),1);
+		set(tour_soundson, true);
+		CirclesControlBarupdateSoundButtons();
+		trace("playBGM");
+	</action>
+
+	<action name="stopBGM">
+	stopsound(bgm);
+	set(tour_soundson, false);
+	CirclesControlBarupdateSoundButtons();
+	</action>
+
+	<!-- play recodingVoice -->
+	<action name="play_voice">
+		set(layer[popup_soundOn].visible,false);
+		set(layer[popup_soundOff].visible,true);
+		playsound("recodingVoice", get(voicepath),1, stop_voice());
+	</action>
+
+	<!-- play recodingVoice -->
+	<action name="stop_voice">
+		set(layer[popup_soundOn].visible,true);
+		set(layer[popup_soundOff].visible,false);
+	stopsound("recodingVoice");
+	</action>
+	
+	<!-- play narrationVoice -->
+	<action name="play_narration">
+		set(hotspot[btn_ty_hsd_16_1_narration_on].visible,false);
+		set(hotspot[btn_ty_hsd_16_1_narration_off].visible,true);
+		playsound("narrationVoice", "%FIRSTXML%/source/ty_hsd/audio/ty_hsd_16_i1_1.mp3", 1, stop_narration());
+	</action>
+	<!-- play narrationVoice -->
+	<action name="stop_narration">
+		set(hotspot[btn_ty_hsd_16_1_narration_on].visible,true);
+		set(hotspot[btn_ty_hsd_16_1_narration_off].visible,flase);
+		stopsound("narrationVoice");
+	</action>
+	
+	<!-- play recodingVoice -->
+  <action name="play_voice_vr">
+	  set(hotspot[popup_soundOn_vr].visible,false);
+	  set(hotspot[popup_soundOff_vr].visible,true);
+	  playsound("recodingVoice", get(voicepath), 2, stop_voice_vr());
+  </action>
+
+  <!-- play recodingVoice -->
+  <action name="stop_voice_vr">
+  	set(hotspot[popup_soundOn_vr].visible,true);
+  	set(hotspot[popup_soundOff_vr].visible,false);
+  	stopsound("recodingVoice");
+  </action>
+
+
+	<action name="Playeffect">
+	set(effectpath, calc: "common/audio/" + "%1" + ".mp3|" + "%1.ogg");
+	playsound(%1, get(effectpath),1);
+	</action>
+
+	<!-- 일반 영상 -->
+	<!-- 0601수정_ 사용하지 않는 함수 주석 처리함.하단 닫기 함수도 동일-->	
+	 <action name="videoplayer_open">
+		delayedcall(0.1, set(layer[videoplayer_bg].visible,true));
+		delayedcall(0.1, tween(layer[videoplayer_bg].alpha,  1.0, 0.3));
+		delayedcall(0.1, set(layer[videoplayer].visible,true));
+		delayedcall(0.1, tween(layer[videoplayer].alpha,  1.0, 0.3) );
+		autorotate.pause();
+		layer[videoplayer].play();
+		if(tour_soundson,	pausesound(bgm););
+</action>
+
+<action name="videoplayer_ready">
+	layer[videoplayer].pause();
+	videoplayer_resize();
+</action>
+
+<action name="videoplayer_resize">
+	div(video_aspectratio, layer[videoplayer].videowidth, layer[videoplayer].videoheight);
+     div(screen_aspectratio, area.pixelwidth, area.pixelheight);
+
+     if(screen_aspectratio GE screen_aspectratio,
+         set(layer[videoplayer].width, 80%);
+         set(layer[videoplayer].height, prop);
+       ,
+         set(layer[videoplayer].width, prop);
+         set(layer[videoplayer].height, 80%);
+       );
+</action>
+
+
+<action name="videoplayer_close">
+	layer[videoplayer].pause();
+	layer[videoplayer].stop();
+	delayedcall(0.5, set(layer[videoplayer_bg].visible,false));
+  tween(layer[videoplayer_bg].alpha,  0.0, 1);
+	delayedcall(0.5, set(layer[videoplayer].visible,false));
+	tween(layer[videoplayer].alpha,  0.0, 1);
+	autorotate.resume();
+	if(tour_soundson,	resumesound(bgm););
+</action>
+<!-- 0601수정_ VR 모드 재생-닫기 아이콘 위치 보정(아이콘 스타일에서 edge 수정하여 추가 이동 불필요함.) -->
+<action name="videoplayer_open_vr">
+	videoplayer_close_vr();
+	set(hotspot[videoplayer].ath, get(hotspot[%2].ath));
+	set(hotspot[videoplayer].atv, get(hotspot[%2].atv));
+ <!--	set(hotspot[play_video_vr].ath, get(hotspot[%2].ath));
+	set(hotspot[play_video_vr].atv, get(calc(hotspot[%2].atv + 25)));
+	set(hotspot[stop_video_vr].ath, get(hotspot[%2].ath));
+	set(hotspot[stop_video_vr].atv, get(calc(hotspot[%2].atv + 25)));
+	set(hotspot[close_video_vr].ath, get(hotspot[%2].ath));
+	set(hotspot[close_video_vr].atv, get(calc(hotspot[%2].atv + 25))); -->
+
+	delayedcall(0.1, set(hotspot[videoplayer].visible,true));
+	delayedcall(0.1, tween(hotspot[videoplayer].alpha,  1.0, 0.3) );
+
+	set(hotspot[play_video_vr].visible,false);
+	delayedcall(0.1, set(hotspot[stop_video_vr].visible,true));
+	delayedcall(0.1, tween(hotspot[stop_video_vr].alpha,  1.0, 0.3) );
+	delayedcall(0.1, set(hotspot[close_video_vr].visible,true));
+	delayedcall(0.1, tween(hotspot[close_video_vr].alpha,  1.0, 0.3) );
+
+	autorotate.pause();
+	hotspot[videoplayer].playvideo(%1);
+
+	if(tour_soundson,	pausesound(bgm););
+</action>
+
+<action name="videoplayer_play_vr">
+	hotspot[videoplayer].play();
+	set(hotspot[play_video_vr].visible,false);
+	set(hotspot[stop_video_vr].visible,true);
+</action>
+<action name="videoplayer_pause_vr">
+	hotspot[videoplayer].pause();
+	set(hotspot[play_video_vr].visible,true);
+	set(hotspot[stop_video_vr].visible,false);
+</action>
+
+<action name="videoplayer_ready_vr">
+<!--	hotspot[videoplayer].pause(); -->
+</action>
+
+<action name="videoplayer_close_vr">
+	hotspot[videoplayer].stop();
+	set(hotspot[videoplayer].alpha,  0.0);
+	set(hotspot[videoplayer].visible,false);
+	set(hotspot[play_video_vr].visible,false);
+	set(hotspot[stop_video_vr].visible,false);
+	set(hotspot[close_video_vr].visible,false);
+	autorotate.resume();
+	if(videoON == "false",
+	if(tour_soundson,	resumesound(bgm););
+	);
+</action>
+	
+	<action name ="Check_360videoON">
+		set(videoON, %1);
+	</action>
+	
+<!-- 0601수정_VR 모드 해제 시 비디오 플레이어 재생 중일 경우 닫도록 정의함. -->
+  <!-- videoplayer vr off if visible is true -->
+  	<action name="videoplayer_vr_off">
+  		if(hotspot[videoplayer].visible == true,
+			videoplayer_close_vr();
+  		);
+  	</action>
+
+<action	name="open_tense">
+plugin[video].togglepause();
+set(layer[tense].url, calc: "source/"+ currentscene + "/popup/" +"%1" + ".png");
+tense_size();
+delayedcall(0.1, set(layer[tense_bg].visible,true));
+delayedcall(0.1, tween(layer[tense_bg].alpha,  1.0, 0.3));
+delayedcall(0.1, set(layer[tense].visible,true));
+delayedcall(0.1, tween(layer[tense].alpha,  1.0, 0.3));
+</action>
+
+<!-- set up popup size -->
+<action name="tense_size">
+	set(layer[tense].width, 1000);
+	set(layer[tense].height, 909);
+	calc(popupratio, layer[tense].width/layer[tense].height);
+	if( stagewidth/stageheight GE popupratio,
+		calc(layer[tense].height, stageheight);
+		calc(layer[tense].width, layer[popup].height * popupratio);
+		, calc(layer[tense].width, stagewidth);
+		calc(layer[tense].height, layer[tense].width / popupratio);
+
+	);
+</action>
+
+<action	name="close_tense">
+plugin[video].togglepause();
+set(layer[tense_bg].alpha,  0.0);
+set(layer[tense_bg].visible,false);
+set(layer[tense].alpha,  0.0);
+set(layer[tense].visible,false);
+</action>
+
+<action	name="open_tense_vr">
+	plugin[video].togglepause();
+	set(hotspot[tense_vr].url, calc: "source/"+ currentscene + "/popup/" +"%1" + ".png");
+	set(tense_vr, calc: "%1" + "_vr");
+	set(hotspot[tense_vr].ath, get(hotspot[get(tense_vr)].ath));
+	set(hotspot[tense_vr].visible,true);
+	set(hotspot[tense_close_btn_vr].ath, get(calc(hotspot[get(tense_vr)].ath + 20)));
+	set(hotspot[tense_close_btn_vr].visible,true);
+</action>
+
+<action	name="close_tense_vr">
+plugin[video].togglepause();
+set(hotspot[tense_vr].visible,false);
+set(hotspot[tense_close_btn_vr].visible,false);
+</action>
+
+</krpano>
