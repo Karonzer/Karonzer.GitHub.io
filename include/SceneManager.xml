@@ -1,0 +1,87 @@
+<krpano>
+
+  <!-- 지역 지도 노드 -->
+  <scene name="commonmap" title="VR 역사 답사" onstart="updateAirSpot(ty_hsd_spot15, -90); videoplayer_open(%FIRSTXML%/source/ty_hsd/video/ty_had_13_v1.mp4);" lat="" lng="" heading="">
+    <preview url="%FIRSTXML%/source/jd_scb/panos/360img_black.jpg" />
+    <view hlookat="30" vlookat="15" fovtype="MFOV" fov="120" fovmin="110" fovmax="130" />
+    <image>
+		<Sphere url="%FIRSTXML%/source/jd_scb/panos/360img_black.jpg" />
+    </image>
+
+	
+  </scene>
+	
+	  <scene name="ty_hsd_0" title="VR 역사 답사" onstart="updateAirSpot(ty_hsd_spot15, -90); open_popup_main(slide10_popup, 1);" lat="" lng="" heading="">
+    <preview url="%FIRSTXML%/source/ty_hsd/panos/ty_hsd_15/ty_hsd_15_preview.jpg" />
+    <view hlookat="-0" vlookat="25" fovtype="MFOV" fov="120" fovmin="110" fovmax="130" />
+    <image>
+		<Sphere url="%FIRSTXML%/source/jd_scb/panos/360img_AirView.jpg" />
+    </image>
+
+    <!-- 지점 이동 핫스팟 스타일 -->
+	
+    <style name="btn_ty_hsd_1_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,1);" onhover="btn_hover(btn_ty_hsd_1, btn_ty_hsd_1_over);" distorted="false" edge="bottom" />
+    <style name="btn_ty_hsd_2_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,2);" onhover="btn_hover(btn_ty_hsd_2, btn_ty_hsd_2_over);" distorted="false" edge="bottom" />
+	<style name="btn_ty_hsd_3_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,3);" onhover="btn_hover(btn_ty_hsd_3, btn_ty_hsd_3_over);" distorted="false" edge="bottom" />
+	<style name="btn_ty_hsd_4_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,4);" onhover="btn_hover(btn_ty_hsd_4, btn_ty_hsd_4_over);" distorted="false" edge="bottom" />
+	<style name="btn_ty_hsd_5_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,5);" onhover="btn_hover(btn_ty_hsd_5, btn_ty_hsd_5_over);" distorted="false" edge="bottom" />
+	<style name="btn_ty_hsd_6_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,6);" onhover="btn_hover(btn_ty_hsd_6, btn_ty_hsd_6_over);" distorted="false" edge="bottom" />
+	<style name="btn_ty_hsd_8_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_4.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,8);" onhover="btn_hover(btn_ty_hsd_8, btn_ty_hsd_8_over);" distorted="false" edge="bottom" />
+    <style name="btn_ty_hsd_9_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_4.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,9);" onhover="btn_hover(btn_ty_hsd_9, btn_ty_hsd_9_over);" distorted="false" edge="bottom" />
+    <style name="btn_ty_hsd_14_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_5.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,14);" onhover="btn_hover(btn_ty_hsd_14, btn_ty_hsd_14_over);" distorted="false" edge="bottom" />
+    <style name="btn_air_spot_main" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_24_air.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,16);" onhover="btn_hover(btn_air_spot, btn_air_spot_over);" distorted="false" edge="bottom" />
+
+    <!--
+    <style name="btn_test" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_13.png" zorder="1" zoom="false" onclick="BGM(ty_hsd);" onhover="btn_hover(btn_test, btn_test_over);" distorted="false" edge="bottom" />
+    <style name="btn_test_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_13_over.png" zorder="1" zoom="false" onclick="BGM(ty_hsd);" onout="btn_out(btn_test, btn_test_over);" distorted="false" edge="bottom"  visible="false" />
+    -->
+    
+    <style name="btn_ty_hsd_1_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,1); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_1, btn_ty_hsd_1_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_2_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,2); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_2, btn_ty_hsd_2_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_3_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,3); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_3, btn_ty_hsd_3_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_4_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,4); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_4, btn_ty_hsd_4_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_5_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,5); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_5, btn_ty_hsd_5_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_6_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_1_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,6); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_6, btn_ty_hsd_6_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_8_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_4_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,8); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_8, btn_ty_hsd_8_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_ty_hsd_9_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_4_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,9); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_9, btn_ty_hsd_9_over);" distorted="false" edge="bottom"  visible="false" />
+    <style name="btn_ty_hsd_14_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_5_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,14); set(layer[videobtn].visible, false);" onout="btn_out(btn_ty_hsd_14, btn_ty_hsd_14_over);" distorted="false" edge="bottom"  visible="false" />
+    <style name="btn_air_spot_main_over" url="%FIRSTXML%/source/ty_hsd/spotsign/btn_ty_hsd_24_air_over.png" zorder="1" zoom="false" onclick="start_tour(ty_hsd,16); set(layer[videobtn].visible, false);" onout="btn_out(btn_air_spot, btn_air_spot_over);" distorted="false" edge="bottom"  visible="false" />
+
+    <!-- 핫스팟 -->
+    <hotspot name="btn_ty_hsd_1" style="btn_ty_hsd_1_main|scale_5"  ath="26.537" atv="23.096" />
+    <hotspot name="btn_ty_hsd_1_over" style="btn_ty_hsd_1_main_over|scale_6"  ath="26.537" atv="23.096" />
+
+	<hotspot name="btn_ty_hsd_2" style="btn_ty_hsd_2_main|scale_5"  ath="35" atv="19.096" />
+	<hotspot name="btn_ty_hsd_2_over" style="btn_ty_hsd_2_main_over|scale_6" ath="35" atv="19.096"  />
+
+	<hotspot name="btn_ty_hsd_3" style="btn_ty_hsd_3_main|scale_5" ath="43" atv="16.096"/>
+	<hotspot name="btn_ty_hsd_3_over" style="btn_ty_hsd_3_main_over|scale_6" ath="43" atv="16.096" />
+
+	<hotspot name="btn_ty_hsd_4" style="btn_ty_hsd_4_main|scale_5" ath="37.5" atv="11" />
+	<hotspot name="btn_ty_hsd_4_over" style="btn_ty_hsd_4_main_over|scale_6" ath="37.5" atv="11" />
+
+	<hotspot name="btn_ty_hsd_5" style="btn_ty_hsd_5_main|scale_5" ath="66.7" atv="8" />
+	<hotspot name="btn_ty_hsd_5_over" style="btn_ty_hsd_5_main_over|scale_6" ath="66.7" atv="8"/>
+
+	<hotspot name="btn_ty_hsd_6" style="btn_ty_hsd_6_main|scale_5" ath="85" atv="2.6" />
+	<hotspot name="btn_ty_hsd_6_over" style="btn_ty_hsd_6_main_over|scale_6" ath="85" atv="2.6" />
+
+	<hotspot name="btn_ty_hsd_8" style="btn_ty_hsd_8_main|scale_5" ath="-10.713" atv="18.838" />
+	<hotspot name="btn_ty_hsd_8_over" style="btn_ty_hsd_8_main_over|scale_6" ath="-10.713" atv="18.838" />
+
+	<hotspot name="btn_ty_hsd_9" style="btn_ty_hsd_9_main|scale_5" ath="-31.713" atv="23.838" />
+    <hotspot name="btn_ty_hsd_9_over" style="btn_ty_hsd_9_main_over|scale_6" ath="-31.713" atv="23.838" />
+
+    <hotspot name="btn_ty_hsd_14" style="btn_ty_hsd_14_main|scale_5" ath="-40.646" atv="20.307" />
+    <hotspot name="btn_ty_hsd_14_over" style="btn_ty_hsd_14_main_over|scale_6" ath="-40.646" atv="20.307" />
+
+    <!--<hotspot name="btn_air_spot" style="btn_air_spot_main|scale_5" ath="177.29" atv="-7.72" />
+    <hotspot name="btn_air_spot_over" style="btn_air_spot_main_over|scale_6" ath="177.29" atv="-7.72" /> -->
+
+  </scene>
+  
+  <!-- 유적지 xml-->
+  <include url="%FIRSTXML%/include/Scene/ty_hsd.xml" />
+
+
+</krpano>
