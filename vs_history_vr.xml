@@ -1,0 +1,59 @@
+<krpano onstart="" minimap="" startscene = "commonmap" spotnumber="" currentscene = "" bgmpath = "" voicepath="" effectpath = "" videoPath = "" retimespot="" popupvr="" debugmode="true" >
+  <krpano CirclesControlBarNo="true" CirclesControlBarbarbuilt="false" CirclesControlBarbackgroundwidthwhenclosed="0" CirclesControlBarbackgroundwidthwhenopened="0" CirclesControlBarIsOpened="false" tour_soundson="" vrmode_on="false" minimap_status="true" minimap_inside="false" minimap_air="false" />
+
+
+  <!-- ????  -->
+  <!--  <krpano CirclesControlBarmenuvravailable="false" />-->
+	<!-- for checking position -->
+  <!--  <include url="%FIRSTXML%/include/DragHotspots.xml" /> -->
+   <!-- <include url="%FIRSTXML%/test.xml" /> -->
+   
+
+
+  <!-- 마우스 오버 시 텍스트 표현 xml 로딩 -->
+  <include url="%FIRSTXML%/plugins/showtext.xml" />
+  <!-- VR 셋팅 xml 로딩 -->
+  <include url="%FIRSTXML%/source/common/settings/vr_setting.xml" />
+  <!-- 비디오 플레이어 셋팅 xml 로딩 -->
+  <include url="%FIRSTXML%/source/common/settings/videoplayer_setting.xml" />
+
+  <!-- 사운드 플러그인 로딩 -->
+  <plugin name="soundinterface"
+      url.flash="%FIRSTXML%/plugins/soundinterface.swf"
+      url.html5="%FIRSTXML%/plugins/soundinterface.js"
+      preload="true"
+      rootpath="%FIRSTXML%/source"
+      volume="1.0"
+      mute="false"
+  />
+
+
+  <!-- Include -->
+  <include url="%FIRSTXML%/include/ActionManager.xml" />
+  <include url="%FIRSTXML%/include/StyleManager.xml" />
+  <include url="%FIRSTXML%/include/LayerManager.xml" />
+  <include url="%FIRSTXML%/include/EventManager.xml" />
+  <include url="%FIRSTXML%/include/SceneManager.xml" />
+  <include url="%FIRSTXML%/include/CirclesControlBar.xml" />
+  <include url="%FIRSTXML%/include/MiniMap.xml" />
+  <include url="%FIRSTXML%/include/PopUp.xml" />
+  <include url="%FIRSTXML%/include/NewVideoPlayer.xml" />
+<!-- 
+<include url="%FIRSTXML%/skin/vtourskin.xml" />
+<include url="%FIRSTXML%/skin/vtourskin_design_black.xml" /> -->
+  <!-- 파노라마 자동 회전 -->
+  <autorotate enabled="true" waittime="4" speed="0.5" />
+
+  <!-- startup action - load the first scene -->
+  <action name="startup" autorun="onstart">
+	  if(startscene == commonmap,
+	  loadscene(get(startscene), null, MERGE);
+	  no_menu();
+	  , txtsplit(startscene, "_", spot_info);
+	  set(startscene, calc: spot_info[0].value + "_" + spot_info[1].value);
+	  start_tour(get(startscene), get(spot_info[2].value), get(spot_info[3].value));
+	  );
+  </action>
+
+
+</krpano>
