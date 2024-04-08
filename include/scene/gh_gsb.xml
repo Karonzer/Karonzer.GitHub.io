@@ -1,0 +1,272 @@
+<krpano>
+
+  <!-- 지점 이동 핫스팟 스타일 -->
+	<!-- 광성보 -->
+	<style name="btn_gh_gsb_1" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_1.png" zorder="1" zoom="false" onclick="goto(gh_gsb_1);" onhover="btn_hover(btn_gh_gsb_1, btn_gh_gsb_1_over);" distorted="false" edge="bottom" />
+	<style name="btn_gh_gsb_2" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_2.png" zorder="1" zoom="false" onclick="goto(gh_gsb_2);" onhover="btn_hover(btn_gh_gsb_2, btn_gh_gsb_2_over);" distorted="false" edge="bottom" />
+	<style name="btn_gh_gsb_3" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_3.png" zorder="1" zoom="false" onclick="goto(gh_gsb_3);" onhover="btn_hover(btn_gh_gsb_3, btn_gh_gsb_3_over);" distorted="false" edge="bottom" />
+	<style name="btn_gh_gsb_4" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_4.png" zorder="1" zoom="false" onclick="goto(gh_gsb_4);" onhover="btn_hover(btn_gh_gsb_4, btn_gh_gsb_4_over);" distorted="false" edge="bottom" />
+	<style name="btn_gh_gsb_5" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_5.png" zorder="1" zoom="false" onclick="goto(gh_gsb_5);" onhover="btn_hover(btn_gh_gsb_5, btn_gh_gsb_5_over);" distorted="false" edge="bottom" />
+	<style name="btn_gh_gsb_6" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_6.png" zorder="1" zoom="false" onclick="goto(gh_gsb_6);" onhover="btn_hover(btn_gh_gsb_6, btn_gh_gsb_6_over);" distorted="false" edge="bottom" />
+
+	<style name="btn_gh_gsb_1_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_1_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_1);" onout="btn_out(btn_gh_gsb_1, btn_gh_gsb_1_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_gh_gsb_2_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_2_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_2);" onout="btn_out(btn_gh_gsb_2, btn_gh_gsb_2_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_gh_gsb_3_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_3_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_3);" onout="btn_out(btn_gh_gsb_3, btn_gh_gsb_3_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_gh_gsb_4_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_4_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_4);" onout="btn_out(btn_gh_gsb_4, btn_gh_gsb_4_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_gh_gsb_5_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_5_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_5);" onout="btn_out(btn_gh_gsb_5, btn_gh_gsb_5_over);" distorted="false" edge="bottom"  visible="false" />
+	<style name="btn_gh_gsb_6_over" url="%FIRSTXML%/source/gh_gsb/spotsign/btn_gh_gsb_6_over.png" zorder="1" zoom="false" onclick="goto(gh_gsb_6);" onout="btn_out(btn_gh_gsb_6, btn_gh_gsb_6_over);" distorted="false" edge="bottom"  visible="false" />
+
+
+
+	<!-- 안해루 -->
+	<scene name="gh_gsb_1" title="안해루" onstart="updateminimap(gh_gsb_spot1, -100, false);" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_1/gh_gsb_1_preview.jpg" />
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_1/2048/gh_gsb_1_%s.jpg" />
+		</image>
+
+		<!-- hotspot -->
+
+			<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo" scale="0.6" />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_1_i1" style="btn_description" ath="+13"  atv="+5"  onclick="open_popup(gh_gsb_1_i1);"  onhover="btn_hover(gh_gsb_1_i1, gh_gsb_1_i1_over);" />
+		<hotspot name="gh_gsb_1_i1_over" style="btn_description_over" ath="+13"  atv="+5"  onclick="open_popup(gh_gsb_1_i1);" onout="btn_out(gh_gsb_1_i1, gh_gsb_1_i1_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_1_i1_vr" style="btn_description_vr" ath="+13"  atv="+5"  onclick="open_popup_vr(gh_gsb_1_i1);" />
+
+		<!-- vr common map hotspot -->
+		<!--<hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over" /> -->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_2" style="btn_gh_gsb_2|scale_6" ath="-54"  atv="13.5" />
+		<hotspot name="btn_gh_gsb_2_over" style="btn_gh_gsb_2_over|scale_7" ath="-54"  atv="13.5" />
+		<hotspot name="btn_gh_gsb_3" style="btn_gh_gsb_3|scale_6" ath="+70"  atv="3" />
+		<hotspot name="btn_gh_gsb_3_over" style="btn_gh_gsb_3_over|scale_7" ath="+70"  atv="3" />
+	</scene>
+
+
+	<!-- 광성돈대 -->
+	<scene name="gh_gsb_2" title="광성돈대" onstart="updateminimap(gh_gsb_spot2, -80, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_2/gh_gsb_2_preview.jpg" />
+		<view hlookat="-35" vlookat="0" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_2/2048/gh_gsb_2_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_2_i1" style="btn_description" ath="+5"  atv="-2.5" onclick="open_popup(gh_gsb_2_i1);"  onhover="btn_hover(gh_gsb_2_i1, gh_gsb_2_i1_over);" />
+		<hotspot name="gh_gsb_2_i1_over" style="btn_description_over" ath="+5"  atv="-2.5" onclick="open_popup(gh_gsb_2_i1);" onout="btn_out(gh_gsb_2_i1, gh_gsb_2_i1_over);" />
+		<hotspot name="gh_gsb_2_i2" style="btn_description" ath="-16"  atv="+12" onclick="open_popup(gh_gsb_2_i2);"  onhover="btn_hover(gh_gsb_2_i2, gh_gsb_2_i2_over);" />
+		<hotspot name="gh_gsb_2_i2_over" style="btn_description_over" ath="-16"  atv="+12" onclick="open_popup(gh_gsb_2_i2);" onout="btn_out(gh_gsb_2_i2, gh_gsb_2_i2_over);" />
+		<hotspot name="gh_gsb_2_i3" style="btn_description" ath="-34"  atv="+14" onclick="open_popup(gh_gsb_2_i3);"  onhover="btn_hover(gh_gsb_2_i3, gh_gsb_2_i3_over);" />
+		<hotspot name="gh_gsb_2_i3_over" style="btn_description_over" ath="-34"  atv="+14" onclick="open_popup(gh_gsb_2_i3);" onout="btn_out(gh_gsb_2_i3, gh_gsb_2_i3_over);" />
+		<hotspot name="gh_gsb_2_i4" style="btn_description" ath="-52"  atv="+15" onclick="open_popup(gh_gsb_2_i4);"  onhover="btn_hover(gh_gsb_2_i4, gh_gsb_2_i4_over);" />
+		<hotspot name="gh_gsb_2_i4_over" style="btn_description_over" ath="-52"  atv="+15" onclick="open_popup(gh_gsb_2_i4);" onout="btn_out(gh_gsb_2_i4, gh_gsb_2_i4_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_2_i1_vr" style="btn_description_vr" ath="+5"  atv="-2.5" onclick="open_popup_vr(gh_gsb_2_i1);" />
+		<hotspot name="gh_gsb_2_i2_vr" style="btn_description_vr" ath="-16"  atv="+12" onclick="open_popup_vr(gh_gsb_2_i2);" />
+		<hotspot name="gh_gsb_2_i3_vr" style="btn_description_vr" ath="-34"  atv="+14" onclick="open_popup_vr(gh_gsb_2_i3);" />
+		<hotspot name="gh_gsb_2_i4_vr" style="btn_description_vr" ath="-52"  atv="+15" onclick="open_popup_vr(gh_gsb_2_i4);" />
+
+		<!-- vr common map hotspot -->
+		<!-- <hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over" /> -->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_1" style="btn_gh_gsb_1|scale_6" ath="+99.5"  atv="+9.5" />
+		<hotspot name="btn_gh_gsb_1_over" style="btn_gh_gsb_1_over|scale_7" ath="+99.5"  atv="+9.5" />
+		</scene>
+
+
+	<!-- 쌍충비각 -->
+	<scene name="gh_gsb_3" title="쌍충비각" onstart="updateminimap(gh_gsb_spot3, -80, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_3/gh_gsb_3_preview.jpg" />
+		<view hlookat="-10" vlookat="2" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_3/2048/gh_gsb_3_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+				<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_3_i1" style="btn_description" ath="+46"  atv="+1" onclick="open_popup(gh_gsb_3_i1);"  onhover="btn_hover(gh_gsb_3_i1, gh_gsb_3_i1_over);" />
+		<hotspot name="gh_gsb_3_i1_over" style="btn_description_over" ath="+46"  atv="+1" onclick="open_popup(gh_gsb_3_i1);" onout="btn_out(gh_gsb_3_i1, gh_gsb_3_i1_over);" />
+		<hotspot name="gh_gsb_3_i2" style="btn_description" ath="-28" atv="+3" onclick="open_popup(gh_gsb_3_i2);"  onhover="btn_hover(gh_gsb_3_i2, gh_gsb_3_i2_over);" />
+		<hotspot name="gh_gsb_3_i2_over" style="btn_description_over" ath="-28" atv="+3" onclick="open_popup(gh_gsb_3_i2);" onout="btn_out(gh_gsb_3_i2, gh_gsb_3_i2_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_3_i1_vr" style="btn_description_vr"  ath="+46"  atv="+1" onclick="open_popup_vr(gh_gsb_3_i1);" />
+		<hotspot name="gh_gsb_3_i2_vr" style="btn_description_vr" ath="-28" atv="+3" onclick="open_popup_vr(gh_gsb_3_i2);" />
+
+		<!-- vr common map hotspot -->
+		<!--<hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over" />-->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_1" style="btn_gh_gsb_1|scale_6" ath="-160"  atv="-1" />
+		<hotspot name="btn_gh_gsb_1_over" style="btn_gh_gsb_1_over|scale_7" ath="-160"  atv="-1" />
+		<hotspot name="btn_gh_gsb_4" style="btn_gh_gsb_4|scale_6" ath="+130"  atv="+10" />
+		<hotspot name="btn_gh_gsb_4_over" style="btn_gh_gsb_4_over|scale_7" ath="+130"  atv="+10" />
+		<hotspot name="btn_gh_gsb_5" style="btn_gh_gsb_5|scale_5" ath="+113"  atv="+7" />
+		<hotspot name="btn_gh_gsb_5_over" style="btn_gh_gsb_5_over|scale_6" ath="+113"  atv="+7" />
+	</scene>
+
+
+	<!-- 신미순의총 -->
+	<scene name="gh_gsb_4" title="신미순의총" onstart="updateminimap(gh_gsb_spot4, -80, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_4/gh_gsb_4_preview.jpg" />
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_4/2048/gh_gsb_4_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+				<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_4_i1" style="btn_description" ath="+20"  atv="+5" onclick="open_popup(gh_gsb_4_i1);"  onhover="btn_hover(gh_gsb_4_i1, gh_gsb_4_i1_over);" />
+		<hotspot name="gh_gsb_4_i1_over" style="btn_description_over" ath="+20"  atv="+5" onclick="open_popup(gh_gsb_4_i1);" onout="btn_out(gh_gsb_4_i1, gh_gsb_4_i1_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_4_i1_vr" style="btn_description_vr" ath="+20"  atv="+5" onclick="open_popup_vr(gh_gsb_4_i1);" />
+
+		<!-- vr common map hotspot -->
+		<!--	<hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over" />-->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_3" style="btn_gh_gsb_3|scale_6" ath="-50"  atv="-13" />
+		<hotspot name="btn_gh_gsb_3_over" style="btn_gh_gsb_3_over|scale_7" ath="-50"  atv="-13" />
+		<hotspot name="btn_gh_gsb_5" style="btn_gh_gsb_5|scale_6" ath="+110"  atv="-8" />
+		<hotspot name="btn_gh_gsb_5_over" style="btn_gh_gsb_5_over|scale_7" ath="+110"  atv="-8" />
+	</scene>
+
+
+	<!-- 손돌목돈대 -->
+	<scene name="gh_gsb_5" title="손돌목돈대" lat="" lng="" heading="" onstart="updateminimap(gh_gsb_spot5, -35, false)">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_5/gh_gsb_5_preview.jpg" />
+		<view hlookat="10" vlookat="20" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_5/2048/gh_gsb_5_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- video -->
+		<hotspot name="gh_gsb_5_v1" style="btn_timeslip" ath="+14"  atv="-6" onclick="goto_video(gh_gsb_5_v1, in);"  onhover="btn_hover(gh_gsb_5_v1, gh_gsb_5_v1_over);" />
+		<hotspot name="gh_gsb_5_v1_over" style="btn_timeslip_over" ath="+14"  atv="-6" onclick="goto_video(gh_gsb_5_v1, in);" onout="btn_out(gh_gsb_5_v1, gh_gsb_5_v1_over);" />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_5_i1" style="btn_description" ath="-12"  atv="+27" onclick="open_popup(gh_gsb_5_i1);"  onhover="btn_hover(gh_gsb_5_i1, gh_gsb_5_i1_over);" />
+		<hotspot name="gh_gsb_5_i1_over" style="btn_description_over" ath="-12"  atv="+27" onclick="open_popup(gh_gsb_5_i1);" onout="btn_out(gh_gsb_5_i1, gh_gsb_5_i1_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_5_i1_vr" style="btn_description_vr" ath="-12"  atv="+27" onclick="open_popup_vr(gh_gsb_5_i1);" />
+
+		<!-- vr common map hotspot -->
+		<!--<hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over"  />-->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_3" style="btn_gh_gsb_3|scale_5" ath="-98"  atv="+15" />
+		<hotspot name="btn_gh_gsb_3_over" style="btn_gh_gsb_3_over|scale_6" ath="-98"  atv="+15" />
+		<hotspot name="btn_gh_gsb_4" style="btn_gh_gsb_4|scale_6" ath="-110"  atv="+17" />
+		<hotspot name="btn_gh_gsb_4_over" style="btn_gh_gsb_4_over|scale_7" ath="-110"  atv="+17" />
+		<hotspot name="btn_gh_gsb_6" style="btn_gh_gsb_6|scale_6" ath="-2"  atv="+10" />
+		<hotspot name="btn_gh_gsb_6_over" style="btn_gh_gsb_6_over|scale_7" ath="-2"  atv="+10" />
+	</scene>
+
+
+	<!-- 용두돈대 -->
+	<scene name="gh_gsb_6" title="용두돈대" onstart="updateminimap(gh_gsb_spot6, -30, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_6/gh_gsb_6_preview.jpg" />
+		<view hlookat="0" vlookat="10" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/gh_gsb/panos/gh_gsb_6/2048/gh_gsb_6_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+				<hotspot name="logo" style="vtvlogo" scale="0.55"  />
+
+		<!-- Description -->
+		<hotspot name="gh_gsb_6_i1" style="btn_description" ath="+11"  atv="+13" onclick="open_popup(gh_gsb_6_i1);"  onhover="btn_hover(gh_gsb_6_i1, gh_gsb_6_i1_over);" />
+		<hotspot name="gh_gsb_6_i1_over" style="btn_description_over" ath="+11"  atv="+13" onclick="open_popup(gh_gsb_6_i1);" onout="btn_out(gh_gsb_6_i1, gh_gsb_6_i1_over);" />
+
+		<!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="gh_gsb_6_i1_vr" style="btn_description_vr" ath="+11"  atv="+13" onclick="open_popup_vr(gh_gsb_6_i1);" />
+
+		<!-- vr common map hotspot -->
+		<!--<hotspot name="btn_common_map" style="btn_common_map" />
+		<hotspot name="btn_common_map_over" style="btn_common_map_over" />-->
+
+		<!-- MovePoint -->
+		<hotspot name="btn_gh_gsb_5" style="btn_gh_gsb_5|scale_6" ath="+155"  atv="-5" />
+		<hotspot name="btn_gh_gsb_5_over" style="btn_gh_gsb_5_over|scale_7" ath="+155"  atv="-5" />
+	</scene>
+
+	<!-- 비디오 노드 -->
+	<scene name="gh_gsb_5_v1" onstart="" >
+
+		<plugin name="video"
+			url.html5="%FIRSTXML%/plugins/videoplayer.js"
+			url.flash="%FIRSTXML%/plugins/videoplayer.swf"
+			pausedonstart="false"
+			html5preload="true"
+			panovideo="true"
+			loop="false"
+			volume="1.0"
+			onloaded="add_video_sources(gh_gsb_5_v1);"
+			onvideocomplete="goto_video(gh_gsb_5, out);"
+		/>
+
+		<image>
+			<sphere url="plugin:video"/>
+		</image>
+
+		<!-- video -->
+		<hotspot name="gh_gsb_5_v1re" style="btn_retimeslip" ath="+5"  atv="-10" onclick="goto_video(gh_gsb_5, out);"  onhover="btn_hover(gh_gsb_5_v1re, gh_gsb_5_v1re_over);" visible="false" />
+		<hotspot name="gh_gsb_5_v1re_over" style="btn_retimeslip_over" ath="+5"  atv="-10" onclick="goto_video(gh_gsb_5, out);" onout="btn_out(gh_gsb_5_v1re, gh_gsb_5_v1re_over);" />
+
+	</scene>
+
+</krpano>

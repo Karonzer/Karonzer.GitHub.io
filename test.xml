@@ -1,0 +1,40 @@
+<krpano>
+
+<krpano logkey="true" debugkeys="true" />
+<events name="point" onclick="point();" keep="true" /> <action name="point"> 
+<!-- debugvar(____________________________________________________); -->
+<!-- calc(scene_calc, '_________________________________________________________________________________________________________________________ hlookat="' + roundval(get(view.hlookat),1) + '" vlookat="' + roundval(get(view.vlookat),1) + '" fovtype="MFOV" fov="' + roundval(get(view.fov),0) + '"  ________________________________');debugvar(scene_calc); -->
+
+<!-- calc(hotspot_calc, '_________________________________________________________________________________________________________________________ ath="' + roundval(get(view.hlookat),1) + '" atv="' + roundval(get(view.vlookat),1) + '"');debugvar(hotspot_calc); -->
+
+
+<!-- def(rader_count, int, 1);
+debugvar(rader_count);
+if( rader_count == 1 , def(now_rader, int, get(view.hlookat));inc(rader_count),
+    def(new_rader, int, get(view.hlookat));
+    calc(radervar, get(layer[radar].heading) + new_rader - now_rader);
+    if( radervar GE 180 , calc(radervar,  radervar - 360););
+    debugvar(radervar);
+); -->
+
+<!-- for(set(i,0), i LT layer.count, inc(i),
+					if(layer[get(i)].style == mapspot,
+						set(layer[get(i)].visible, false);
+					);
+					if(layer[get(i)].style == airspot,
+						set(layer[get(i)].visible, false);
+					);
+);
+ -->
+
+<!-- goto_commonmap(); -->
+
+<!-- debugvar(_____________________end___________________________); -->
+
+ </action>
+ <!-- <layer name="point1" type="container" width="12" height="12" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0xFFFFFF" bgalpha="1.0" keep="true" />
+ <layer name="point2" type="container" width="6" height="6" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="1.0" keep="true" />
+ <layer name="line1" type="container" width="100%" height="1" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="1.0" keep="true" />
+ <layer name="line2" type="container" width="1" height="100%" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="1.0" keep="true" /> -->
+
+</krpano>

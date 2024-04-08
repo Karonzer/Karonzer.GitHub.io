@@ -1,0 +1,50 @@
+<krpano>
+
+	<!-- common map layers -->
+	<layer name="commonmap_bg" type="container" width="100%" height="100%" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="0.7" onclick="close_commonmap();" visible="false" keep="true" enabled="true" handcursor="false" />
+	<layer name="commonmap" url="%FIRSTXML%/source/common/commonmap/common_map.png" width="1500" height="1048" onloaded="layer_size()" alpha="0.0" zorder="20" align="center" onclick="close_commonmap();" visible="false" keep="true" scalechildren="true" handcursor="false"  />
+	<layer name="closecommonmap" url="%FIRSTXML%/source/common/commonmap/commonmap_spot.png" parent="commonmap" width="70" height="70" x="70" y="50" keep="true" align="rightttop" zorder="21" edge="righttop" handcursor="true" onclick="close_commonmap();" />
+
+	<!--<layer name="go_gh_gsb" style="commonmap_spot" x="233" y="364"  onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=gh_gsb', _self);"/>
+	<layer name="go_sw_hse" style="commonmap_spot" x="336" y="493" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=sw_hse', _self);"/>
+	<layer name="go_gj_ssr" style="commonmap_spot" x="282" y="705" edge="righttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=gj_ssr', _self);"/>
+	<layer name="go_cs_jls" style="commonmap_spot" x="282" y="705" edge="lefttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_new/cs_jls/index.html', _self);"/>
+	<layer name="go_su_sdm" style="commonmap_spot" x="1104" y="449" edge="rightbottom" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=su_sdm', _self);"/>
+	<layer name="go_su_asd" style="commonmap_spot" x="1104" y="449" edge="leftbottom" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=su_asd', _self);"/>
+	<layer name="go_jd_gdm" style="commonmap_spot" x="1104" y="449" edge="righttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=jd_gdm', _self);"/>
+	<layer name="go_su_gbg" style="commonmap_spot" x="1104" y="449" edge="lefttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=su_gbg', _self);"/>
+	<layer name="go_ty_hsd" style="commonmap_spot" x="835" y="612" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_new/ty_hsd/index.html', _self);"/>
+	<layer name="go_an_bss" style="commonmap_spot" x="1101" y="607" edge="righttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=an_bss', _self);"/>
+	<layer name="go_gj_dbs" style="commonmap_spot" x="1101" y="607" edge="lefttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=gj_dbs', _self);"/>
+	<layer name="go_cs_bgs" style="commonmap_spot" x="1211" y="605" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_new/cs_bgs/index.html', _self);"/>
+	<layer name="go_is_bjy" style="commonmap_spot" x="824" y="748" edge="righttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=is_bjy', _self);"/>
+	<layer name="go_gc_sus" style="commonmap_spot" x="824" y="748" edge="lefttop" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_new/gc_sus/index.html', _self);"/>
+	<layer name="go_gs_gdy" style="commonmap_spot" x="931" y="749" onclick="openurl('https://dn.vivasam.com/VS/THEME/VRHISTORY/vrkoreanhis_high/index.html?startscene=gs_gdy', _self);"/> -->
+ -->
+
+	<layer name="videoplayer_bg" type="container" width="100%" height="100%" alpha="0.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="0.7" onclick="videoplayer_close();" keep="true" enabled="true" visible="false" />
+	<layer name="droneplayer_bg" type="container" width="100%" height="100%" alpha="0.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="0.7" onclick="droneplayer_close();" keep="true" enabled="true" visible="false" />
+
+	<!-- common help layers -->
+	<layer name="help_bg" type="container" width="100%" height="100%" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="0.7" onclick="close_help();" visible="false" keep="true" enabled="true" />
+	<layer name="help" url="%FIRSTXML%/source/common/popup/common_help.png" width="1500" height="1048" alpha="0.0" zorder="20" align="center" onclick="close_help();" visible="false" keep="true" scalechildren="true" />
+
+	<!-- tense layers -->
+	<layer name="tense_bg" type="container" width="100%" height="100%" alpha="1.0" bgcapture="true" zorder="15" align="center" bgcolor="0x000000" bgalpha="0.7" onclick="close_tense();" visible="false" keep="true" enabled="true" />
+	<layer name="tense" type="image" alpha="0.0" zorder="20" align="center" onclick="close_tense();" visible="false" keep="true" scalechildren="true" />
+
+	<!-- 사이드 메뉴 -->
+	<layer name="sidemenu" type="container" keep="true" capture="false" zorder="5" x="20" align="left" width="42" height="400" maskchildren="true" alpha="1.0" scale.mobile="0.9" >
+	<!--	<layer name="btn_help" url="%FIRSTXML%/source/common/sidemenu/btn_help.png" style="sidemenu_btn" x="0" y="-160" y.mobile="-135" onhover="showtext(도움말 보기);" onclick="open_help();"/> -->
+		<layer name="btn_help" url="%FIRSTXML%/source/common/sidemenu/btn_help.png" style="sidemenu_btn" x="0" y="-96" y.mobile="-135" onhover="showtext(도움말 보기);" onclick="open_help();"/>
+	<!--	<layer name="btn_question" url="%FIRSTXML%/source/common/sidemenu/btn_question.png" style="sidemenu_btn" x="0" y="-96" y.mobile="-81" onhover="showtext(핵심 탐구 질문);"  onclick="layer_on(question);"/> -->
+		<layer name="btn_info" url="%FIRSTXML%/source/common/sidemenu/btn_info.png" style="sidemenu_btn" x="0" y="-32" y.mobile="-27" onhover="showtext(유적지 정보);" onclick="layer_on_newSize(info);"/>
+		<layer name="btn_minimap" url="%FIRSTXML%/source/common/sidemenu/btn_minimap.png" style="sidemenu_btn" x="0" y="32" y.mobile="27" onhover="showtext(답사 지도);"  onclick="open_close_minimap()"/>
+		<!--<layer name="btn_map" url="%FIRSTXML%/source/common/sidemenu/btn_map.png" style="sidemenu_btn" x="0" y="96" y.mobile="81" onhover="showtext(유적지 지도);" onclick="open_commonmap();" />
+		<layer name="btn_qr" url="%FIRSTXML%/source/common/sidemenu/btn_qr.png" style="sidemenu_btn" x="0" y="160" y.mobile="135" onhover="showtext(QR 코드 보기);" onclick="layer_on(qr);"/> -->
+
+	</layer>
+
+
+
+</krpano>
