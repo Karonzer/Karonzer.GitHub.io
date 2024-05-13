@@ -1,0 +1,542 @@
+<krpano>
+
+  <!-- for checking position -->
+  <include url="%FIRSTXML%/include/DragHotspots.xml" />
+  <hotspot name="spot1" url="%FIRSTXML%/source/common/AimMark.png" zorder="1" zoom="false" scale="0.5" ath="0" atv="0"  ondown="draghotspot();" />
+
+
+ <!-- 지점 이동 핫스팟 스타일 -->
+ <!-- 정동 근대 문화유산 -->
+  <style name="btn_jd_gdm_1" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_1.png" zorder="1" zoom="false" onclick="goto(jd_gdm_1);" onhover="btn_hover(btn_jd_gdm_1, btn_jd_gdm_1_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_2" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_2.png" zorder="1" zoom="false" onclick="goto(jd_gdm_2);" onhover="btn_hover(btn_jd_gdm_2, btn_jd_gdm_2_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_3" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_3.png" zorder="1" zoom="false" onclick="goto(jd_gdm_3);" onhover="btn_hover(btn_jd_gdm_3, btn_jd_gdm_3_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_4" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_4.png" zorder="1" zoom="false" onclick="goto(jd_gdm_4);" onhover="btn_hover(btn_jd_gdm_4, btn_jd_gdm_4_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_5" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_5.png" zorder="1" zoom="false" onclick="goto(jd_gdm_5);" onhover="btn_hover(btn_jd_gdm_5, btn_jd_gdm_5_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_6" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6);" onhover="btn_hover(btn_jd_gdm_6, btn_jd_gdm_6_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_7" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_7.png" zorder="1" zoom="false" onclick="goto(jd_gdm_7);" onhover="btn_hover(btn_jd_gdm_7, btn_jd_gdm_7_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_8" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_8.png" zorder="1" zoom="false" onclick="goto(jd_gdm_8);" onhover="btn_hover(btn_jd_gdm_8, btn_jd_gdm_8_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_9" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_9.png" zorder="1" zoom="false" onclick="goto(jd_gdm_9);" onhover="btn_hover(btn_jd_gdm_9, btn_jd_gdm_9_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_10" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_10.png" zorder="1" zoom="false" onclick="goto(jd_gdm_10);" onhover="btn_hover(btn_jd_gdm_10, btn_jd_gdm_10_over);" distorted="false" edge="bottom" />
+
+  <style name="btn_jd_gdm_1_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_1_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_1);" onout="btn_out(btn_jd_gdm_1, btn_jd_gdm_1_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_2_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_2_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_2);" onout="btn_out(btn_jd_gdm_2, btn_jd_gdm_2_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_3_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_3_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_3);" onout="btn_out(btn_jd_gdm_3, btn_jd_gdm_3_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_4_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_4_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_4);" onout="btn_out(btn_jd_gdm_4, btn_jd_gdm_4_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_5_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_5_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_5);" onout="btn_out(btn_jd_gdm_5, btn_jd_gdm_5_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_6_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6);" onout="btn_out(btn_jd_gdm_6, btn_jd_gdm_6_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_7_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_7_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_7);" onout="btn_out(btn_jd_gdm_7, btn_jd_gdm_7_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_8_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_8_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_8);" onout="btn_out(btn_jd_gdm_8, btn_jd_gdm_8_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_9_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_9_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_9);" onout="btn_out(btn_jd_gdm_9, btn_jd_gdm_9_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_10_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_10_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_10);" onout="btn_out(btn_jd_gdm_10, btn_jd_gdm_10_over);" distorted="false" edge="bottom"  visible="false" />
+
+  <!-- 내부 이동 핫스팟 스타일 -->
+  <style name="btn_jd_gdm_6_1" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6_1.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6_1);" onhover="btn_hover(btn_jd_gdm_6_1, btn_jd_gdm_6_1_over);" distorted="false" edge="bottom" />
+  <style name="btn_jd_gdm_6_2" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6_2.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6_2);" onhover="btn_hover(btn_jd_gdm_6_2, btn_jd_gdm_6_2_over);" distorted="false" edge="bottom" />
+
+  <style name="btn_jd_gdm_6_1_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6_1_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6_1);" onout="btn_out(btn_jd_gdm_6_1, btn_jd_gdm_6_1_over);" distorted="false" edge="bottom"  visible="false" />
+  <style name="btn_jd_gdm_6_2_over" url="%FIRSTXML%/source/jd_gdm/spotsign/btn_jd_gdm_6_2_over.png" zorder="1" zoom="false" onclick="goto(jd_gdm_6_2);" onout="btn_out(btn_jd_gdm_6_2, btn_jd_gdm_6_2_over);" distorted="false" edge="bottom"  visible="false" />
+
+
+	<!-- 대한문 -->
+	<scene name="jd_gdm_1" title="대한문" onstart="updateminimap(jd_gdm_spot1, -110  , false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_1/jd_gdm_1_preview.jpg" />
+		<view hlookat="-49.0" vlookat="-22.7" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_1/2048/jd_gdm_1_%s.jpg" />
+		</image>
+
+		<!-- hotspot -->
+
+    <!-- Logo -->
+    <hotspot name="logo" style="vtvlogo"  />
+
+    <!-- video player -->
+ <!--   <hotspot name="jd_gdm_1_v1" style="btn_exploremovie" ath="-49.2" atv="-42.7" onhover="btn_hover(jd_gdm_1_v1, jd_gdm_1_v1_over);" onclick="videoplayer_open(%FIRSTXML%/source/jd_gdm/video/jd_gdm_1_v1.mp4);"/>
+    <hotspot name="jd_gdm_1_v1_over" style="btn_exploremovie_over" ath="-49.2" atv="-42.7" onout="btn_out(jd_gdm_1_v1, jd_gdm_1_v1_over);" onclick="videoplayer_open(%FIRSTXML%/source/jd_gdm/video/jd_gdm_1_v1.mp4);"/>-->
+
+    <!-- video player vr -->
+		<!--  <hotspot name="jd_gdm_1_v1_vr" style="btn_exploremovie_vr" ath="-49.2" atv="-42.7" onclick="videoplayer_open_vr(%FIRSTXML%/source/jd_gdm/video/jd_gdm_1_v1.mp4, jd_gdm_1_v1_vr);"/>
+
+    <hotspot name="play_video_vr" style="btn_vr_video_play|scale_6"  atv="5" />
+		<hotspot name="stop_video_vr" style="btn_vr_video_stop|scale_6" atv="5" />
+    <hotspot name="close_video_vr" style="btn_vr_video_close|scale_6" atv="5" />
+
+    <hotspot name="videoplayer" style="videoplayer" /> -->
+
+    <!-- Description -->
+    <hotspot name="jd_gdm_1_i1" style="btn_description" ath="-31.2" atv="-20.8" onclick="open_popup(jd_gdm_1_i1,1);"  onhover="btn_hover(jd_gdm_1_i1, jd_gdm_1_i1_over);" />
+    <hotspot name="jd_gdm_1_i1_over" style="btn_description_over" ath="-31.2" atv="-20.8" onclick="open_popup(jd_gdm_1_i1,1);" onout="btn_out(jd_gdm_1_i1, jd_gdm_1_i1_over);" />
+
+    <!-- vr Description -->
+    <hotspot name="popup_vr" style = "popup_window_vr"/>
+    <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+    <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+    <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+    <hotspot name="jd_gdm_1_i1_vr" style="btn_description_vr" ath="-31.2" atv="-20.8"  onclick="open_popup_vr(jd_gdm_1_i1,1);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+
+    
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_2" style="btn_jd_gdm_2|scale_6" ath="-48.2" atv="1.7" />
+    <hotspot name="btn_jd_gdm_2_over" style="btn_jd_gdm_2_over|scale_7" ath="-48.2" atv="1.7" />
+    <hotspot name="btn_jd_gdm_6" style="btn_jd_gdm_6|scale_6"  ath="-102.1" atv="2.9" />
+    <hotspot name="btn_jd_gdm_6_over" style="btn_jd_gdm_6_over|scale_7"  ath="-102.1" atv="2.9" />
+
+	</scene>
+
+
+	<!-- 중화전 -->
+	<scene name="jd_gdm_2" title="중화전" onstart="updateminimap(jd_gdm_spot2, -105, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_2/jd_gdm_2_preview.jpg" />
+		<view hlookat="15.4" vlookat="-3.1" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_2/2048/jd_gdm_2_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="jd_gdm_2_i1" style="btn_description" ath="29.8" atv="-11.6" onclick="open_popup(jd_gdm_2_i1,2);"  onhover="btn_hover(jd_gdm_2_i1, jd_gdm_2_i1_over);" />
+		<hotspot name="jd_gdm_2_i1_over" style="btn_description_over" ath="29.8" atv="-11.6" onclick="open_popup(jd_gdm_2_i1,2);" onout="btn_out(jd_gdm_2_i1, jd_gdm_2_i1_over);" />
+
+    <!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="jd_gdm_2_i1_vr" style="btn_description_vr" ath="29.8" atv="-11.6"  onclick="open_popup_vr(jd_gdm_2_i1,2);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+
+		
+
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_1" style="btn_jd_gdm_1|scale_6" ath="-166.0" atv="3.8" />
+    <hotspot name="btn_jd_gdm_1_over" style="btn_jd_gdm_1_over|scale_7" ath="-166.0" atv="3.8" />
+    <hotspot name="btn_jd_gdm_3" style="btn_jd_gdm_3|scale_6" ath="-48.0" atv="3.8" />
+    <hotspot name="btn_jd_gdm_3_over" style="btn_jd_gdm_3_over|scale_7" ath="-48.0" atv="3.8" />
+    <hotspot name="btn_jd_gdm_5" style="btn_jd_gdm_5|scale_6" ath="79.8" atv="3.8" />
+    <hotspot name="btn_jd_gdm_5_over" style="btn_jd_gdm_5_over|scale_7" ath="79.8" atv="3.8" />
+
+
+		</scene>
+
+	<!-- 석조전 -->
+	<scene name="jd_gdm_3" title="석조전" onstart="updateminimap(jd_gdm_spot3, -85, false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_3/jd_gdm_3_preview.jpg" />
+		<view hlookat="-1.7" vlookat="-13.1" fovtype="MFOV" fov="121" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_3/2048/jd_gdm_3_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+    <!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+    <!-- Description -->
+    <hotspot name="jd_gdm_3_i1" style="btn_description" ath="24.8" atv="-32.4" onclick="open_popup(jd_gdm_3_i1,2);"  onhover="btn_hover(jd_gdm_3_i1, jd_gdm_3_i1_over);" />
+    <hotspot name="jd_gdm_3_i1_over" style="btn_description_over" ath="24.8" atv="-32.4" onclick="open_popup(jd_gdm_3_i1,2);" onout="btn_out(jd_gdm_3_i1, jd_gdm_3_i1_over);" />
+
+    <!-- vr Description -->
+    <hotspot name="popup_vr" style = "popup_window_vr"/>
+    <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+    <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+    <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+    <hotspot name="jd_gdm_3_i1_vr" style="btn_description_vr" ath="24.8" atv="-32.4"  onclick="open_popup_vr(jd_gdm_3_i1,2);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+		
+
+
+<!-- MovePoint -->
+		<hotspot name="btn_jd_gdm_2" style="btn_jd_gdm_2|scale_6" ath="152.1" atv="3.0" />
+		<hotspot name="btn_jd_gdm_2_over" style="btn_jd_gdm_2_over|scale_7" ath="152.1" atv="3.0" />
+    <hotspot name="btn_jd_gdm_4" style="btn_jd_gdm_4|scale_6" ath="103.2" atv="2.4" />
+		<hotspot name="btn_jd_gdm_4_over" style="btn_jd_gdm_4_over|scale_7" ath="103.2" atv="2.4" />
+	</scene>
+
+
+	<!-- 정관헌 -->
+	<scene name="jd_gdm_4" title="정관헌" onstart="updateminimap(jd_gdm_spot4, -119 , false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_4/jd_gdm_4_preview.jpg" />
+		<view hlookat="30.1" vlookat="-6.9" fovtype="MFOV" fov="121" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_4/2048/jd_gdm_4_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="jd_gdm_4_i1" style="btn_description" ath="46.5" atv="-9.0" onclick="open_popup(jd_gdm_4_i1,2);"  onhover="btn_hover(jd_gdm_4_i1, jd_gdm_4_i1_over);" />
+		<hotspot name="jd_gdm_4_i1_over" style="btn_description_over" ath="46.5" atv="-9.0" onclick="open_popup(jd_gdm_4_i1,2);" onout="btn_out(jd_gdm_4_i1, jd_gdm_4_i1_over);" />
+
+    <!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="jd_gdm_4_i1_vr" style="btn_description_vr" ath="46.5" atv="-9.0"  onclick="open_popup_vr(jd_gdm_4_i1,2);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+		
+
+
+<!-- MovePoint -->
+		<hotspot name="btn_jd_gdm_3" style="btn_jd_gdm_3|scale_6" ath="-43.7" atv="2.9" />
+		<hotspot name="btn_jd_gdm_3_over" style="btn_jd_gdm_3_over|scale_7" ath="-43.7" atv="2.9"  />
+		<hotspot name="btn_jd_gdm_5" style="btn_jd_gdm_5|scale_6" ath="-164" atv="7.1" />
+		<hotspot name="btn_jd_gdm_5_over" style="btn_jd_gdm_5_over|scale_7" ath="-164" atv="7.1" />
+
+
+
+	</scene>
+
+	<!-- 함녕전  -->
+	<scene name="jd_gdm_5" title="함녕전" lat="" lng="" heading="" onstart="updateminimap(jd_gdm_spot5, -97 , false)">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_5/jd_gdm_5_preview.jpg" />
+		<view hlookat="10.0" vlookat="-6.9" fovtype="MFOV" fov="128" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_5/2048/jd_gdm_5_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="jd_gdm_5_i1" style="btn_description" ath="37.5" atv="-10.1" onclick="open_popup(jd_gdm_5_i1,1);"  onhover="btn_hover(jd_gdm_5_i1, jd_gdm_5_i1_over);" />
+		<hotspot name="jd_gdm_5_i1_over" style="btn_description_over" ath="37.5" atv="-10.1" onclick="open_popup(jd_gdm_5_i1,1);" onout="btn_out(jd_gdm_5_i1, jd_gdm_5_i1_over);" />
+
+    <!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="jd_gdm_5_i1_vr" style="btn_description_vr" ath="37.5" atv="-10.1"  onclick="open_popup_vr(jd_gdm_5_i1,1);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+
+    
+
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_2" style="btn_jd_gdm_2|scale_6" ath="-172.3" atv="6.0" />
+    <hotspot name="btn_jd_gdm_2_over" style="btn_jd_gdm_2_over|scale_7"  ath="-172.3" atv="6.0" />
+		<hotspot name="btn_jd_gdm_4" style="btn_jd_gdm_4|scale_6" ath="-46.1" atv="1.0" />
+		<hotspot name="btn_jd_gdm_4_over" style="btn_jd_gdm_4_over|scale_7" ath="-46.1" atv="1.0" />
+
+
+	</scene>
+
+	<!-- 배재 학당 역사박물관- -->
+	<scene name="jd_gdm_6" title="배재학당역사박물관" onstart="updateminimap(jd_gdm_spot6, -75 , false)" lat="" lng="" heading="">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6/jd_gdm_6_preview.jpg" />
+		<view hlookat="45.2" vlookat="-11.6" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6/2048/jd_gdm_6_%s.jpg" />
+		</image>
+		<!-- hotspot -->
+
+		<!-- Logo -->
+				<hotspot name="logo" style="vtvlogo"  />
+
+		<!-- Description -->
+		<hotspot name="jd_gdm_6_i1" style="btn_description" ath="63.2" atv="-10.4" onclick="open_popup(jd_gdm_6_i1,1);"  onhover="btn_hover(jd_gdm_6_i1, jd_gdm_6_i1_over);" />
+		<hotspot name="jd_gdm_6_i1_over" style="btn_description_over" ath="63.2" atv="-10.4" onclick="open_popup(jd_gdm_6_i1,1);" onout="btn_out(jd_gdm_6_i1, jd_gdm_6_i1_over);" />
+    <hotspot name="jd_gdm_6_i2" style="btn_description" ath="-74.0" atv="-1.4" onclick="open_popup(jd_gdm_6_i2,1);"  onhover="btn_hover(jd_gdm_6_i2, jd_gdm_6_i2_over);" />
+		<hotspot name="jd_gdm_6_i2_over" style="btn_description_over" ath="-74.0" atv="-1.4" onclick="open_popup(jd_gdm_6_i2,1);" onout="btn_out(jd_gdm_6_i2, jd_gdm_6_i2_over);" />
+
+    <!-- vr Description -->
+		<hotspot name="popup_vr" style = "popup_window_vr"/>
+		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+		<hotspot name="jd_gdm_6_i1_vr" style="btn_description_vr" ath="63.2" atv="-10.4"  onclick="open_popup_vr(jd_gdm_6_i1,1);" />
+		<hotspot name="jd_gdm_6_i2_vr" style="btn_description_vr" ath="-74.0" atv="-1.4"  onclick="open_popup_vr(jd_gdm_6_i2,1);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+    <!-- Move Inside -->
+    <hotspot name="enterence" style="btn_enterence" ath="45.5" atv="0.8" onclick="goto_inside(jd_gdm_6, jd_gdm_6_1);"  onhover="btn_hover(enterence, enterence_over);" />
+    <hotspot name="enterence_over" style="btn_enterence_over" ath="45.5" atv="0.8" onclick="goto_inside(jd_gdm_6, jd_gdm_6_1);" onout="btn_out(enterence, enterence_over);" />
+
+		
+
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_1" style="btn_jd_gdm_1|scale_6" ath="91.4" atv="5.1" />
+    <hotspot name="btn_jd_gdm_1_over" style="btn_jd_gdm_1_over|scale_7" ath="91.4" atv="5.1" />
+    <hotspot name="btn_jd_gdm_7" style="btn_jd_gdm_7|scale_6" ath="-2.5" atv="7.6" />
+    <hotspot name="btn_jd_gdm_7_over" style="btn_jd_gdm_7_over|scale_7" ath="-2.5" atv="7.6" />
+
+
+	</scene>
+
+  	<!-- 내부1 -->
+  	<scene name="jd_gdm_6_1" title="내부1" onstart="update_inside_minimap(jd_gdm_6_spot1)" lat="" lng="" heading="">
+  		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6_1/jd_gdm_6_1_preview.jpg" />
+  		<view hlookat="38.2" vlookat="-0.6" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+  		<image>
+  			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6_1/2048/jd_gdm_6_1_%s.jpg" />
+  		</image>
+  		<!-- hotspot -->
+
+  	  <!-- Logo -->
+  		<hotspot name="logo" style="vtvlogo"  />
+
+      <!-- Description -->
+      <hotspot name="jd_gdm_6_1_i1" style="btn_description" ath="-81.0" atv="12.7" onclick="open_popup(jd_gdm_6_1_i1,1);"  onhover="btn_hover(jd_gdm_6_1_i1, jd_gdm_6_1_i1_over);" />
+      <hotspot name="jd_gdm_6_1_i1_over" style="btn_description_over" ath="-81.0" atv="12.7" onclick="open_popup(jd_gdm_6_1_i1,1);" onout="btn_out(jd_gdm_6_1_i1, jd_gdm_6_1_i1_over);" />
+      <hotspot name="jd_gdm_6_1_i2" style="btn_description" ath="29.7" atv="9.0" onclick="open_popup(jd_gdm_6_1_i2,2);"  onhover="btn_hover(jd_gdm_6_1_i2, jd_gdm_6_1_i2_over);" />
+      <hotspot name="jd_gdm_6_1_i2_over" style="btn_description_over" ath="29.7" atv="9.0" onclick="open_popup(jd_gdm_6_1_i2,2);" onout="btn_out(jd_gdm_6_1_i2, jd_gdm_6_1_i2_over);" />
+
+      <!-- vr Description -->
+      <hotspot name="popup_vr" style = "popup_window_vr"/>
+      <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+      <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+      <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+      <hotspot name="jd_gdm_6_1_i1_vr" style="btn_description_vr" ath="-81.0" atv="12.7"  onclick="open_popup_vr(jd_gdm_6_1_i1,1);" />
+      <hotspot name="jd_gdm_6_1_i2_vr" style="btn_description_vr" ath="29.7" atv="9.0"  onclick="open_popup_vr(jd_gdm_6_1_i2,2);" />
+
+      <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+      <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+      <!-- Move outside -->
+      <hotspot name="exit" style="btn_exit" ath="-73.0" atv="-3.9" onclick="goto_outside(jd_gdm_6);"  onhover="btn_hover(exit, exit_over);" />
+      <hotspot name="exit_over" style="btn_exit_over" ath="-73.0" atv="-3.9" onclick="goto_outside(jd_gdm_6);" onout="btn_out(exit, exit_over);" />
+
+  		
+
+
+<!-- MovePoint -->
+  		<hotspot name="btn_jd_gdm_6_2" style="btn_jd_gdm_6_2|scale_6" ath="160.1" atv="10.0" />
+  		<hotspot name="btn_jd_gdm_6_2_over" style="btn_jd_gdm_6_2_over|scale_7" ath="160.1" atv="10.0" />
+
+  	</scene>
+
+    <!-- 내부2 -->
+  	<scene name="jd_gdm_6_2" title="내부2" onstart="update_inside_minimap(jd_gdm_6_spot2)" lat="" lng="" heading="">
+  		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6_2/jd_gdm_6_2_preview.jpg" />
+  		<view hlookat="-43.8" vlookat="5.9" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+  		<image>
+  			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_6_2/2048/jd_gdm_6_2_%s.jpg" />
+  		</image>
+  		<!-- hotspot -->
+
+  		<!-- Logo -->
+  		<hotspot name="logo" style="vtvlogo"  />
+
+  		<!-- Description -->
+  		<hotspot name="jd_gdm_6_2_i1" style="btn_description" ath="-32.1" atv="9.2" onclick="open_popup(jd_gdm_6_2_i1,1);"  onhover="btn_hover(jd_gdm_6_2_i1, jd_gdm_6_2_i1_over);" />
+  		<hotspot name="jd_gdm_6_2_i1_over" style="btn_description_over" ath="-32.1" atv="9.2" onclick="open_popup(jd_gdm_6_2_i1,1);" onout="btn_out(jd_gdm_6_2_i1, jd_gdm_6_2_i1_over);" />
+
+
+      <!-- vr Description -->
+  		<hotspot name="popup_vr" style = "popup_window_vr"/>
+  		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+  		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+  		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+  		<hotspot name="jd_gdm_6_2_i1_vr" style="btn_description_vr" ath="-32.1" atv="9.2"  onclick="open_popup_vr(jd_gdm_6_2_i1,1);" />
+
+      <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+      <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+      <!-- Move outside -->
+      <hotspot name="exit" style="btn_exit" ath="-96"  atv="-20" onclick="goto_outside(jd_gdm_6);"  onhover="btn_hover(exit, exit_over);" />
+      <hotspot name="exit_over" style="btn_exit_over" ath="-96"  atv="-20" onclick="goto_outside(jd_gdm_6);" onout="btn_out(exit, exit_over);" />
+
+  		
+
+<!-- MovePoint -->
+  		<hotspot name="btn_jd_gdm_6_1" style="btn_jd_gdm_6_1|scale_6" ath="-55.3" atv="9.5" />
+  		<hotspot name="btn_jd_gdm_6_1_over" style="btn_jd_gdm_6_1_over|scale_7" ath="-55.3" atv="9.5" />
+
+  	</scene>
+
+
+  <!-- 정동 제일교회 -->
+	<scene name="jd_gdm_7" title="정동제일교회" onstart="updateminimap(jd_gdm_spot7, -125 , false)">
+		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_7/jd_gdm_7_preview.jpg" />
+		<view hlookat="12.4" vlookat="-3.9" fovtype="MFOV" fov="127" fovmin="80" fovmax="130" />
+		<image>
+			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_7/2048/jd_gdm_7_%s.jpg" />
+		</image>
+
+		<!-- hotspot -->
+
+		<!-- Logo -->
+		<hotspot name="logo" style="vtvlogo"  />
+
+    <!-- Description -->
+    <hotspot name="jd_gdm_7_i1" style="btn_description" ath="19.7" atv="-20.3" onclick="open_popup(jd_gdm_7_i1,1);"  onhover="btn_hover(jd_gdm_7_i1, jd_gdm_7_i1_over);" />
+    <hotspot name="jd_gdm_7_i1_over" style="btn_description_over" ath="19.7" atv="-20.3" onclick="open_popup(jd_gdm_7_i1,1);" onout="btn_out(jd_gdm_7_i1, jd_gdm_7_i1_over);" />
+
+    <!-- vr Description -->
+    <hotspot name="popup_vr" style = "popup_window_vr"/>
+    <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+    <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+    <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+    <hotspot name="jd_gdm_7_i1_vr" style="btn_description_vr" ath="19.7" atv="-20.3"  onclick="open_popup_vr(jd_gdm_7_i1,1);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+		
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_6" style="btn_jd_gdm_6|scale_6" ath="-145.0" atv="4.4" />
+    <hotspot name="btn_jd_gdm_6_over" style="btn_jd_gdm_6_over|scale_7" ath="-145.0" atv="4.4" />
+    <hotspot name="btn_jd_gdm_8" style="btn_jd_gdm_8|scale_6" ath="-52.0" atv="-14.6" />
+    <hotspot name="btn_jd_gdm_8_over" style="btn_jd_gdm_8_over|scale_7" ath="-52.0" atv="-14.6" />
+    <hotspot name="btn_jd_gdm_9" style="btn_jd_gdm_9|scale_6" ath="95.4" atv="6.1" />
+    <hotspot name="btn_jd_gdm_9_over" style="btn_jd_gdm_9_over|scale_7" ath="95.4" atv="6.1" />
+
+	</scene>
+
+  	<!-- 이화박물관 -->
+  	<scene name="jd_gdm_8" title="이화박물관" onstart="updateminimap(jd_gdm_spot8, -90 , false)" >
+  		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_8/jd_gdm_8_preview.jpg" />
+  		<view hlookat="112.9" vlookat="-17.6" fovtype="MFOV" fov="115" fovmin="80" fovmax="130" />
+  		<image>
+  			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_8/2048/jd_gdm_8_%s.jpg" />
+  		</image>
+
+  		<!-- hotspot -->
+
+  		<!-- Logo -->
+  		<hotspot name="logo" style="vtvlogo"  />
+
+      <!-- video player -->
+    <!--  <hotspot name="jd_gdm_8_v1" style="btn_addmovie" ath="240.8" atv="0" onhover="btn_hover(jd_gdm_8_v1, jd_gdm_8_v1_over);" onclick="videoplayer_open(%FIRSTXML%/source/jd_gdm/video/jd_gdm_8_v1.mp4);"/>
+      <hotspot name="jd_gdm_8_v1_over" style="btn_addmovie_over" ath="240.8" atv="0" onout="btn_out(jd_gdm_8_v1, jd_gdm_8_v1_over);" onclick="videoplayer_open(%FIRSTXML%/source/jd_gdm/video/jd_gdm_8_v1.mp4);"/> -->
+
+      <!-- video player vr -->
+      <!-- <hotspot name="jd_gdm_8_v1_vr" style="btn_addmovie_vr" ath="240.8" atv="0" onclick="videoplayer_open_vr(%FIRSTXML%/source/jd_gdm/video/jd_gdm_8_v1.mp4, jd_gdm_8_v1_vr);"/> -->
+
+      <hotspot name="play_video_vr" style="btn_vr_video_play|scale_6"  atv="5" />
+      <hotspot name="stop_video_vr" style="btn_vr_video_stop|scale_6" atv="5" />
+      <hotspot name="close_video_vr" style="btn_vr_video_close|scale_6" atv="5" />
+
+      <hotspot name="videoplayer" style="videoplayer" />
+
+  		<!-- Description -->
+  		<hotspot name="jd_gdm_8_i1" style="btn_description" ath="138.6" atv="-12.6" onclick="open_popup(jd_gdm_8_i1,2);"  onhover="btn_hover(jd_gdm_8_i1, jd_gdm_8_i1_over);" />
+  		<hotspot name="jd_gdm_8_i1_over" style="btn_description_over" ath="138.6" atv="-12.6" onclick="open_popup(jd_gdm_8_i1,2);" onout="btn_out(jd_gdm_8_i1, jd_gdm_8_i1_over);" />
+      <hotspot name="jd_gdm_8_i2" style="btn_description" ath="-118.8" atv="16.3" onclick="open_popup(jd_gdm_8_i2,2);"  onhover="btn_hover(jd_gdm_8_i2, jd_gdm_8_i2_over);" />
+  		<hotspot name="jd_gdm_8_i2_over" style="btn_description_over" ath="-118.8" atv="16.3" onclick="open_popup(jd_gdm_8_i2,2);" onout="btn_out(jd_gdm_8_i2, jd_gdm_8_i2_over);" />
+
+      <!-- vr Description -->
+  		<hotspot name="popup_vr" style = "popup_window_vr"/>
+  		<hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+  		<hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+  		<hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+  		<hotspot name="jd_gdm_8_i1_vr" style="btn_description_vr" ath="138.6" atv="-12.6"  onclick="open_popup_vr(jd_gdm_8_i1,2);" />
+  		<hotspot name="jd_gdm_8_i2_vr" style="btn_description_vr" ath="-118.8" atv="16.3"  onclick="open_popup_vr(jd_gdm_8_i2,2);" />
+
+      <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+      <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+  		
+
+<!-- MovePoint -->
+      <hotspot name="btn_jd_gdm_7" style="btn_jd_gdm_7|scale_6" ath="166.7" atv="1.2" />
+      <hotspot name="btn_jd_gdm_7_over" style="btn_jd_gdm_7_over|scale_7" ath="166.7" atv="1.2" />
+      <hotspot name="btn_jd_gdm_9" style="btn_jd_gdm_9|scale_6" ath="32.2" atv="7.9" />
+      <hotspot name="btn_jd_gdm_9_over" style="btn_jd_gdm_9_over|scale_7" ath="32.2" atv="7.9" />
+      <hotspot name="btn_jd_gdm_10" style="btn_jd_gdm_10|scale_6" ath="5.7" atv="5.2" />
+      <hotspot name="btn_jd_gdm_10_over" style="btn_jd_gdm_10_over|scale_7" ath="5.7" atv="5.2" />
+
+  	</scene>
+
+    <!-- 중명전 -->
+  	<scene name="jd_gdm_9" title="중명전" onstart="updateminimap(jd_gdm_spot9, -99, false)" lat="" lng="" heading="">
+  		<preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_9/jd_gdm_9_preview.jpg" />
+    	<view hlookat="10.9" vlookat="-7.8" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+  		<image>
+  			<cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_9/2048/jd_gdm_9_%s.jpg" />
+  		</image>
+  		<!-- hotspot -->
+
+      <!-- Logo -->
+      <hotspot name="logo" style="vtvlogo"  />
+
+      <!-- Description -->
+      <hotspot name="jd_gdm_9_1_i1" style="btn_description" ath="27.4" atv="-21.9" onclick="open_popup(jd_gdm_9_i1,2);"  onhover="btn_hover(jd_gdm_9_i1, jd_gdm_9_i1_over);" />
+      <hotspot name="jd_gdm_9_1_i1_over" style="btn_description_over" ath="27.4" atv="-21.9" onclick="open_popup(jd_gdm_9_i1,2);" onout="btn_out(jd_gdm_9_i1, jd_gdm_9_i1_over);" />
+
+      <!-- vr Description -->
+      <hotspot name="popup_vr" style = "popup_window_vr"/>
+      <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+      <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+      <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+      <hotspot name="jd_gdm_9_1_i1_vr" style="btn_description_vr" ath="27.4" atv="-21.9"  onclick="open_popup_vr(jd_gdm_9_i1,2);" />
+
+      <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+      <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+      
+
+<!-- MovePoint -->
+      <hotspot name="btn_jd_gdm_8" style="btn_jd_gdm_8|scale_6" ath="158.3" atv="5.6" />
+      <hotspot name="btn_jd_gdm_8_over" style="btn_jd_gdm_8_over|scale_7" ath="158.3" atv="5.6" />
+      <hotspot name="btn_jd_gdm_10" style="btn_jd_gdm_10|scale_6" ath="-59.9" atv="-6.3" />
+      <hotspot name="btn_jd_gdm_10_over" style="btn_jd_gdm_10_over|scale_7" ath="-59.9" atv="-6.3" />
+
+
+	</scene>
+
+  <!-- 구 러시아 공사관 -->
+  <scene name="jd_gdm_10" title="구러시아공사관" onstart="updateminimap(jd_gdm_spot10, -90 , false)" lat="" lng="" heading="">
+    <preview url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_10/jd_gdm_10_preview.jpg" />
+    <view hlookat="45.4" vlookat="-23.2" fovtype="MFOV" fov="110" fovmin="60" fovmax="130" />
+    <image>
+      <cube url="%FIRSTXML%/source/jd_gdm/panos/jd_gdm_10/2048/jd_gdm_10_%s.jpg" />
+    </image>
+    <!-- hotspot -->
+
+    <!-- Logo -->
+   <hotspot name="logo" style="vtvlogo"  />
+
+    <!-- Description -->
+    <hotspot name="jd_gdm_10_i1" style="btn_description" ath="54.0" atv="-2.7" onclick="open_popup(jd_gdm_10_i1,2);"  onhover="btn_hover(jd_gdm_10_i1, jd_gdm_10_i1_over);" />
+    <hotspot name="jd_gdm_10_i1_over" style="btn_description_over" ath="54.0" atv="-2.7" onclick="open_popup(jd_gdm_10_i1,2);" onout="btn_out(jd_gdm_10_i1, jd_gdm_10_i1_over);" />
+
+    <!-- vr Description -->
+    <hotspot name="popup_vr" style = "popup_window_vr"/>
+    <hotspot name="popup_close_btn_vr" style="popup_close_btn_vr" atv="-18"  onclick="close_popup_vr();"/>
+    <hotspot name="popup_soundOn_vr" style="popup_soundOn_vr"  atv="5" />
+    <hotspot name="popup_soundOff_vr" style="popup_soundOff_vr" atv="5" />
+    <hotspot name="jd_gdm_10_i1_vr" style="btn_description_vr" ath="54.0" atv="-2.7"  onclick="open_popup_vr(jd_gdm_10_i1,2);" />
+
+    <hotspot name="popup_btn_left_vr" style="popup_btn_left_vr"  atv="0" />
+    <hotspot name="popup_btn_right_vr" style="popup_btn_right_vr" atv="0" />
+
+
+
+<!-- MovePoint -->
+    <hotspot name="btn_jd_gdm_8" style="btn_jd_gdm_8|scale_6" ath="173.9" atv="7.4" />
+    <hotspot name="btn_jd_gdm_8_over" style="btn_jd_gdm_8_over|scale_7" ath="173.9" atv="7.4" />
+    <hotspot name="btn_jd_gdm_9" style="btn_jd_gdm_9|scale_6" ath="134.3" atv="10.0" />
+    <hotspot name="btn_jd_gdm_9_over" style="btn_jd_gdm_9_over|scale_7" ath="134.3" atv="10.0" />
+
+  </scene>
+
+
+</krpano>

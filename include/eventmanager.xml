@@ -1,0 +1,10 @@
+<krpano>
+
+	<events name="minimap_resize" onresize="minimap_size();" keep="true" />
+	<events name="commonmap_resize" onresize="commonmap_size();" keep="true" />
+	<events name="popup_resize" onresize="popup_size();" keep="true" />
+	<events name="tense_resize" onresize="tense_size();" keep="true" />
+	<events name="layer_resize" onresize="layer_size(); layer_size_newSize();" keep="true" />
+	<!-- <events name="video_resize" onresize="videoplayer_resize();" keep="true" /> -->
+
+</krpano>
