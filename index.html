@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>웹(Web) 실감형 콘텐츠 | Visang_ImmersiveContents</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+    <div id="unity-container" class="unity-desktop">
+        <div class="webgl-content" style="width: 100%; height:100%;">
+            <div id="gameContainer" style="width: 100%; height:100%;">
+                <canvas id="unity-canvas" style="width: 100%; height:100%;"></canvas>
+                <div class="circle_progress_wrap" hidden style="display:block;">
+                    <strong class="valueText" style="vertical-align:bottom"></strong>
+                    <div style="transform: scale(0.4);">
+                        <lottie-player src="TemplateData/roading.json" style="width: 721px; height: 650px;" speed="1" loop autoplay></lottie-player>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="control" type="range" value="0" hidden />
+    <script>
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/test.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/test.data.unityweb",
+            frameworkUrl: buildUrl + "/test.framework.js.unityweb",
+            codeUrl: buildUrl + "/test.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Visang",
+            productName: "Visang_ImmersiveContents",
+            productVersion: "0.0.1",
+        };
+
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector(".circle_progress_wrap");
+        var value = document.querySelector('.valueText');
+        var unityInstance = null;
+
+        // 페이지 가시성 변경 시 호출되는 함수
+        function handleVisibilityChange() {
+            if (document.hidden) {
+                if (unityInstance) {
+                    unityInstance.SendMessage('Sound', 'PauseAllSounds');
+                }
+                console.log("안봄:");
+            } else {
+                if (unityInstance) {
+                    unityInstance.SendMessage('Sound', 'ResumeAllSounds');
+                }
+                console.log("봄:");
+            }
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange, false);
+
+        // Unity WebGL 콘텐츠 영역이 포커스를 잃을 때 호출되는 함수
+        function handleCanvasBlur() {
+            if (unityInstance) {
+                unityInstance.SendMessage('Sound', 'PauseAllSounds');
+            }
+            console.log("Unity WebGL 콘텐츠 포커스 아웃");
+        }
+
+        // Unity WebGL 콘텐츠 영역이 포커스를 얻을 때 호출되는 함수
+        function handleCanvasFocus() {
+            if (unityInstance) {
+                unityInstance.SendMessage('Sound', 'ResumeAllSounds');
+            }
+            console.log("Unity WebGL 콘텐츠 포커스 인");
+        }
+
+        // 포커스 이벤트 리스너 추가
+        canvas.setAttribute('tabindex', '0'); 
+        canvas.addEventListener('blur', handleCanvasBlur, false);
+        canvas.addEventListener('focus', handleCanvasFocus, false);
+
+        value.innerHTML = '0%';
+        config.matchWebGLToCanvasSize = true;
+
+        // Unity 로더 스크립트를 비동기로 로드하는 함수
+        function loadUnityLoader(loaderUrl) {
+            return new Promise((resolve, reject) => {
+                var script = document.createElement("script");
+                script.src = loaderUrl;
+                script.onload = resolve; // 로드가 완료되면 resolve 호출
+                script.onerror = reject; // 로드 실패 시 reject 호출
+                document.body.appendChild(script);
+            });
+        }
+
+        // Unity 인스턴스를 생성하는 함수
+        function initializeUnityInstance(canvas, config) {
+            return createUnityInstance(canvas, config, (progress) => {
+                value.innerHTML = parseInt(100 * progress) + '%';
+            });
+        }
+
+        // 비동기 함수로 Unity 로더 스크립트 로드 및 인스턴스 생성 실행
+        async function startUnity(loaderUrl, canvas, config, loadingBar) {
+            try {
+                // Unity 로더 스크립트 로드
+                await loadUnityLoader(loaderUrl);
+
+                // Unity 인스턴스 생성
+                const instance = await initializeUnityInstance(canvas, config);
+
+                // Unity 인스턴스가 성공적으로 생성되었을 때 로딩 바 숨김 처리
+                unityInstance = instance;
+                loadingBar.style.display = "none";
+            } catch (error) {
+                // 오류가 발생하면 경고 메시지 표시
+                alert(error.message || 'An error occurred while loading Unity.');
+            }
+        }
+
+        // Unity 시작 함수 호출
+        startUnity(loaderUrl, canvas, config, loadingBar);
+    </script>
+</body>
+</html>
