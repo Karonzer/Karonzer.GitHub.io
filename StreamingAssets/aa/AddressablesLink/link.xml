@@ -1,0 +1,253 @@
+<linker>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="AreusefulOurLivesPlaces.AniController" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.ArrivalCheck" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.AudioController" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.BlinkPopup" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.ButtonEvent" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.CameraFOV" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.GameGuide" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.JoystickCheck" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.MainController" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.MissionCard" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.MissionDoneCheck" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.Player" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.PlayerParticle" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.PlayerTrigger" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.PopUpExit" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.PopupSpeaker" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.QuizBtn" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.QuizPopup" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.QuizTimer" preserve="all" />
+    <type fullname="AreusefulOurLivesPlaces.TimerController" preserve="all" />
+    <type fullname="CompleteMap.AniEvent" preserve="all" />
+    <type fullname="CompleteMap.CardFlip" preserve="all" />
+    <type fullname="CompleteMap.CardGameManager" preserve="all" />
+    <type fullname="CompleteMap.CardSelected" preserve="all" />
+    <type fullname="CompleteMap.ChildrenActive" preserve="all" />
+    <type fullname="CompleteMap.FindGameHit" preserve="all" />
+    <type fullname="CompleteMap.FindGameManager" preserve="all" />
+    <type fullname="CompleteMap.GameTimer" preserve="all" />
+    <type fullname="CompleteMap.ObjsOnOffButton" preserve="all" />
+    <type fullname="CompleteMap.PathFinder" preserve="all" />
+    <type fullname="CompleteMap.PopupSpeaker" preserve="all" />
+    <type fullname="CompleteMap.QuizPopup" preserve="all" />
+    <type fullname="CompleteMap.QuizTimer" preserve="all" />
+    <type fullname="CompleteMap.Retry" preserve="all" />
+    <type fullname="CompleteMap.SkipButton" preserve="all" />
+    <type fullname="CompleteMap.UILineRenderer" preserve="all" />
+    <type fullname="CompleteMap.UnloadScene" preserve="all" />
+    <type fullname="CompleteMap.WrongPosition" preserve="all" />
+    <type fullname="EEF.AudioController" preserve="all" />
+    <type fullname="EEF.ButtonEvent" preserve="all" />
+    <type fullname="EEF.CameraFOV" preserve="all" />
+    <type fullname="EEF.Content0_2" preserve="all" />
+    <type fullname="EEF.Content0_4" preserve="all" />
+    <type fullname="EEF.Content0_6" preserve="all" />
+    <type fullname="EEF.Content1_4" preserve="all" />
+    <type fullname="EEF.Content2_1" preserve="all" />
+    <type fullname="EEF.ContentController" preserve="all" />
+    <type fullname="EEF.ContentPopupController" preserve="all" />
+    <type fullname="EEF.JoystickCheck" preserve="all" />
+    <type fullname="EEF.MainController" preserve="all" />
+    <type fullname="EEF.MouseScrollWheel" preserve="all" />
+    <type fullname="EEF.ObjectRotate" preserve="all" />
+    <type fullname="EEF.Player" preserve="all" />
+    <type fullname="EEF.PlayerCameraRotation" preserve="all" />
+    <type fullname="EEF.PlayerMinimap" preserve="all" />
+    <type fullname="EEF.PlayerTrigger" preserve="all" />
+    <type fullname="EEF.PopUpExit" preserve="all" />
+    <type fullname="EEF.PopupSpeaker" preserve="all" />
+    <type fullname="EEF.QuizBtn" preserve="all" />
+    <type fullname="EEF.QuizPopup" preserve="all" />
+    <type fullname="EEF.QuizTimer" preserve="all" />
+    <type fullname="EEF.VideoController" preserve="all" />
+    <type fullname="EEF.ZoomController" preserve="all" />
+    <type fullname="ER.BlinkAni" preserve="all" />
+    <type fullname="ER.BottomUiController" preserve="all" />
+    <type fullname="ER.Btn_BGM" preserve="all" />
+    <type fullname="ER.Btn_Narration" preserve="all" />
+    <type fullname="ER.C_1Controller" preserve="all" />
+    <type fullname="ER.C_1MissionBtn" preserve="all" />
+    <type fullname="ER.C_2Controller" preserve="all" />
+    <type fullname="ER.C_3Controller" preserve="all" />
+    <type fullname="ER.C1Rot" preserve="all" />
+    <type fullname="ER.C2AniEvent" preserve="all" />
+    <type fullname="ER.C2DresserAniEvent" preserve="all" />
+    <type fullname="ER.C2DresserBtnsSliderPopUp" preserve="all" />
+    <type fullname="ER.C2MissionGuideAndActivityPopUpController" preserve="all" />
+    <type fullname="ER.C2MissionImageAndBtn" preserve="all" />
+    <type fullname="ER.C2MissionTimer" preserve="all" />
+    <type fullname="ER.C2SliderPopUp" preserve="all" />
+    <type fullname="ER.C3ContentBtns" preserve="all" />
+    <type fullname="ER.C3MissionGuideAndActivityPopUpController" preserve="all" />
+    <type fullname="ER.CamAniController" preserve="all" />
+    <type fullname="ER.CameraFOV" preserve="all" />
+    <type fullname="ER.CameraRotation" preserve="all" />
+    <type fullname="ER.DragGasValvePopUp" preserve="all" />
+    <type fullname="ER.MissionGuideAndActivityPopUpController" preserve="all" />
+    <type fullname="ER.MissionTimerController" preserve="all" />
+    <type fullname="ER.TimerController" preserve="all" />
+    <type fullname="FadeIn" preserve="all" />
+    <type fullname="FadeOut" preserve="all" />
+    <type fullname="FixedJoystick" preserve="all" />
+    <type fullname="MouseScrollWheel" preserve="all" />
+    <type fullname="NHEH.AudioController" preserve="all" />
+    <type fullname="NHEH.BlinkPopup" preserve="all" />
+    <type fullname="NHEH.ButtonEvent" preserve="all" />
+    <type fullname="NHEH.CameraFOV" preserve="all" />
+    <type fullname="NHEH.ContentController" preserve="all" />
+    <type fullname="NHEH.ContentNum_0" preserve="all" />
+    <type fullname="NHEH.ContentText" preserve="all" />
+    <type fullname="NHEH.JoystickCheck" preserve="all" />
+    <type fullname="NHEH.MainController" preserve="all" />
+    <type fullname="NHEH.ObjectRotate" preserve="all" />
+    <type fullname="NHEH.Player" preserve="all" />
+    <type fullname="NHEH.PlayerCameraRotation" preserve="all" />
+    <type fullname="NHEH.PlayerMinimap" preserve="all" />
+    <type fullname="NHEH.PlayerTrigger" preserve="all" />
+    <type fullname="NHEH.PopUpExit" preserve="all" />
+    <type fullname="NHEH.PopupSpeaker" preserve="all" />
+    <type fullname="NHEH.QuizBtn" preserve="all" />
+    <type fullname="NHEH.QuizPopup" preserve="all" />
+    <type fullname="NHEH.QuizTimer" preserve="all" />
+    <type fullname="NHEH.VideoController" preserve="all" />
+    <type fullname="NHEH.ZoomController" preserve="all" />
+    <type fullname="PublicInstitutions.AniController" preserve="all" />
+    <type fullname="PublicInstitutions.ArrivalCheck" preserve="all" />
+    <type fullname="PublicInstitutions.AudioController" preserve="all" />
+    <type fullname="PublicInstitutions.BlinkPopup" preserve="all" />
+    <type fullname="PublicInstitutions.CameraFOV" preserve="all" />
+    <type fullname="PublicInstitutions.CurrentMission" preserve="all" />
+    <type fullname="PublicInstitutions.DragObj" preserve="all" />
+    <type fullname="PublicInstitutions.DropPoint" preserve="all" />
+    <type fullname="PublicInstitutions.GameGuide" preserve="all" />
+    <type fullname="PublicInstitutions.JoystickCheck" preserve="all" />
+    <type fullname="PublicInstitutions.MainController" preserve="all" />
+    <type fullname="PublicInstitutions.MissionCard" preserve="all" />
+    <type fullname="PublicInstitutions.MissionDoneCheck" preserve="all" />
+    <type fullname="PublicInstitutions.MissionDongoffice" preserve="all" />
+    <type fullname="PublicInstitutions.MissionFireStation" preserve="all" />
+    <type fullname="PublicInstitutions.MissionPolice" preserve="all" />
+    <type fullname="PublicInstitutions.MissionPostoffice" preserve="all" />
+    <type fullname="PublicInstitutions.Player" preserve="all" />
+    <type fullname="PublicInstitutions.PlayerTrigger" preserve="all" />
+    <type fullname="PublicInstitutions.PoliceFinger" preserve="all" />
+    <type fullname="PublicInstitutions.PopUpExit" preserve="all" />
+    <type fullname="PublicInstitutions.PopupSpeaker" preserve="all" />
+    <type fullname="PublicInstitutions.QuizBtn" preserve="all" />
+    <type fullname="PublicInstitutions.QuizPopup" preserve="all" />
+    <type fullname="PublicInstitutions.QuizTimer" preserve="all" />
+    <type fullname="PublicInstitutions.TimerController" preserve="all" />
+    <type fullname="PublicInstitutions.TriggerPoint" preserve="all" />
+    <type fullname="RegionalShift.BottomBar" preserve="all" />
+    <type fullname="TopToBottom" preserve="all" />
+    <type fullname="EEF.ObjectRotate/UserInfo" preserve="nothing" serialized="true" />
+    <type fullname="EEF.PlayerCameraRotation/UserInfo" preserve="nothing" serialized="true" />
+    <type fullname="NHEH.ObjectRotate/UserInfo" preserve="nothing" serialized="true" />
+    <type fullname="NHEH.PlayerCameraRotation/UserInfo" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AI.NavMeshAgent" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AnimationClip" preserve="all" />
+    <type fullname="UnityEngine.Animator" preserve="all" />
+    <type fullname="UnityEngine.Avatar" preserve="all" />
+    <type fullname="UnityEngine.RuntimeAnimatorController" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+    <type fullname="UnityEngine.AudioSource" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Camera" preserve="all" />
+    <type fullname="UnityEngine.Cubemap" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Light" preserve="all" />
+    <type fullname="UnityEngine.LightingSettings" preserve="all" />
+    <type fullname="UnityEngine.LightmapSettings" preserve="all" />
+    <type fullname="UnityEngine.LightProbes" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Mesh" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.ReflectionProbe" preserve="all" />
+    <type fullname="UnityEngine.RenderSettings" preserve="all" />
+    <type fullname="UnityEngine.RenderTexture" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.ParticleSystem" preserve="all" />
+    <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+    <type fullname="UnityEngine.CapsuleCollider" preserve="all" />
+    <type fullname="UnityEngine.CharacterController" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody" preserve="all" />
+    <type fullname="UnityEngine.SphereCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+    <type fullname="UnityEngine.TextMesh" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
+    <type fullname="UnityEngine.UI.Button" preserve="all" />
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.Outline" preserve="all" />
+    <type fullname="UnityEngine.UI.RawImage" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider" preserve="all" />
+    <type fullname="UnityEngine.UI.Text" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Video.VideoPlayer" preserve="all" />
+  </assembly>
+</linker>
